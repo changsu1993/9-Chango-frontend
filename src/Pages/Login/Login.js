@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import "Pages/Login/Login.scss";
+import React, { Component } from 'react';
+import './Login.scss';
 
 export default class Login extends Component {
   render() {

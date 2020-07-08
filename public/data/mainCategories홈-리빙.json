@@ -1,0 +1,144 @@
+{
+  "category": [
+    {
+      "order": 1,
+      "title": "홈/리빙",
+      "id": 30,
+      "background_image": "https://dmmj3ljielax6.cloudfront.net/upload/cat-bg/9e804af7-9e7a-403a-a6f8-668c3dee00ff.jpg",
+      "slug": "홈-리빙",
+      "popular_service": [
+        {
+          "pop_title": "집 인테리어1",
+          "pop_img": "https://dmmj3ljielax6.cloudfront.net/upload/service/featured_service_c29f8bea-69c8-41f6-b6b4-d7d83910bcb8.png"
+        },
+        {
+          "pop_title": "집 인테리어2",
+          "pop_img": "https://dmmj3ljielax6.cloudfront.net/upload/service/featured_service_c29f8bea-69c8-41f6-b6b4-d7d83910bcb8.png"
+        },
+        {
+          "pop_title": "집 인테리어3",
+          "pop_img": "https://dmmj3ljielax6.cloudfront.net/upload/service/featured_service_c29f8bea-69c8-41f6-b6b4-d7d83910bcb8.png"
+        },
+        {
+          "pop_title": "집 인테리어4",
+          "pop_img": "https://dmmj3ljielax6.cloudfront.net/upload/service/featured_service_c29f8bea-69c8-41f6-b6b4-d7d83910bcb8.png"
+        },
+        {
+          "pop_title": "집 인테리어5",
+          "pop_img": "https://dmmj3ljielax6.cloudfront.net/upload/service/featured_service_c29f8bea-69c8-41f6-b6b4-d7d83910bcb8.png"
+        },
+        {
+          "pop_title": "집 인테리어6",
+          "pop_img": "https://dmmj3ljielax6.cloudfront.net/upload/service/featured_service_c29f8bea-69c8-41f6-b6b4-d7d83910bcb8.png"
+        }
+      ],
+      "whole_service": [
+        {
+          "list_head": "학업1",
+          "list_el": [
+            "토론 과외",
+            "영어 과외",
+            "수학 과외",
+            "국어 과외",
+            "과학 과외",
+            "사회 과외",
+            "논술 과외",
+            "편입 과외",
+            "검정고시 과외",
+            "주산/암산 과외",
+            "한문 과외",
+            "체대 입시 준비",
+            "대학 입시 컨설팅",
+            "대학 입시 자소서 컨설팅",
+            "논문 컨설팅",
+            "유학 컨설팅"
+          ]
+        },
+        {
+          "list_head": "학업2",
+          "list_el": [
+            "토론 과외",
+            "영어 과외",
+            "수학 과외",
+            "국어 과외",
+            "과학 과외",
+            "사회 과외",
+            "논술 과외",
+            "편입 과외",
+            "검정고시 과외",
+            "주산/암산 과외",
+            "한문 과외",
+            "체대 입시 준비",
+            "대학 입시 컨설팅",
+            "대학 입시 자소서 컨설팅",
+            "논문 컨설팅",
+            "유학 컨설팅"
+          ]
+        },
+        {
+          "list_head": "학업3",
+          "list_el": [
+            "토론 과외",
+            "영어 과외",
+            "수학 과외",
+            "국어 과외",
+            "과학 과외",
+            "사회 과외",
+            "논술 과외",
+            "편입 과외",
+            "검정고시 과외",
+            "주산/암산 과외",
+            "한문 과외",
+            "체대 입시 준비",
+            "대학 입시 컨설팅",
+            "대학 입시 자소서 컨설팅",
+            "논문 컨설팅",
+            "유학 컨설팅"
+          ]
+        },
+        {
+          "list_head": "학업4",
+          "list_el": [
+            "토론 과외",
+            "영어 과외",
+            "수학 과외",
+            "국어 과외",
+            "과학 과외",
+            "사회 과외",
+            "논술 과외",
+            "편입 과외",
+            "검정고시 과외",
+            "주산/암산 과외",
+            "한문 과외",
+            "체대 입시 준비",
+            "대학 입시 컨설팅",
+            "대학 입시 자소서 컨설팅",
+            "논문 컨설팅",
+            "유학 컨설팅"
+          ]
+        },
+        {
+          "list_head": "학업5",
+          "list_el": [
+            "토론 과외",
+            "영어 과외",
+            "수학 과외",
+            "국어 과외",
+            "과학 과외",
+            "사회 과외",
+            "논술 과외",
+            "편입 과외",
+            "검정고시 과외",
+            "주산/암산 과외",
+            "한문 과외",
+            "체대 입시 준비",
+            "대학 입시 컨설팅",
+            "대학 입시 자소서 컨설팅",
+            "논문 컨설팅",
+            "유학 컨설팅"
+          ]
+        }
+      ]
+    }
+  ]
+}

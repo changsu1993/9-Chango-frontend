@@ -1,0 +1,144 @@
+{
+  "category": [
+    {
+      "order": 0,
+      "title": "레슨",
+      "id": 29,
+      "background_image": "https://dmmj3ljielax6.cloudfront.net/upload/cat-bg/aa7539ef-59e7-4d1c-b563-01dd65e390de.jpg",
+      "slug": "레슨",
+      "popular_service": [
+        {
+          "pop_title": "미술 회화 레슨1",
+          "pop_img": "https://dmmj3ljielax6.cloudfront.net/upload/service/featured_service_49d51f9d-07d7-404c-a6d1-fabb26e13662.jpg"
+        },
+        {
+          "pop_title": "미술 회화 레슨2",
+          "pop_img": "https://dmmj3ljielax6.cloudfront.net/upload/service/featured_service_49d51f9d-07d7-404c-a6d1-fabb26e13662.jpg"
+        },
+        {
+          "pop_title": "미술 회화 레슨3",
+          "pop_img": "https://dmmj3ljielax6.cloudfront.net/upload/service/featured_service_49d51f9d-07d7-404c-a6d1-fabb26e13662.jpg"
+        },
+        {
+          "pop_title": "미술 회화 레슨4",
+          "pop_img": "https://dmmj3ljielax6.cloudfront.net/upload/service/featured_service_49d51f9d-07d7-404c-a6d1-fabb26e13662.jpg"
+        },
+        {
+          "pop_title": "미술 회화 레슨5",
+          "pop_img": "https://dmmj3ljielax6.cloudfront.net/upload/service/featured_service_49d51f9d-07d7-404c-a6d1-fabb26e13662.jpg"
+        },
+        {
+          "pop_title": "미술 회화 레슨6",
+          "pop_img": "https://dmmj3ljielax6.cloudfront.net/upload/service/featured_service_49d51f9d-07d7-404c-a6d1-fabb26e13662.jpg"
+        }
+      ],
+      "whole_service": [
+        {
+          "list_head": "학업1",
+          "list_el": [
+            "토론 과외",
+            "영어 과외",
+            "수학 과외",
+            "국어 과외",
+            "과학 과외",
+            "사회 과외",
+            "논술 과외",
+            "편입 과외",
+            "검정고시 과외",
+            "주산/암산 과외",
+            "한문 과외",
+            "체대 입시 준비",
+            "대학 입시 컨설팅",
+            "대학 입시 자소서 컨설팅",
+            "논문 컨설팅",
+            "유학 컨설팅"
+          ]
+        },
+        {
+          "list_head": "학업2",
+          "list_el": [
+            "토론 과외",
+            "영어 과외",
+            "수학 과외",
+            "국어 과외",
+            "과학 과외",
+            "사회 과외",
+            "논술 과외",
+            "편입 과외",
+            "검정고시 과외",
+            "주산/암산 과외",
+            "한문 과외",
+            "체대 입시 준비",
+            "대학 입시 컨설팅",
+            "대학 입시 자소서 컨설팅",
+            "논문 컨설팅",
+            "유학 컨설팅"
+          ]
+        },
+        {
+          "list_head": "학업3",
+          "list_el": [
+            "토론 과외",
+            "영어 과외",
+            "수학 과외",
+            "국어 과외",
+            "과학 과외",
+            "사회 과외",
+            "논술 과외",
+            "편입 과외",
+            "검정고시 과외",
+            "주산/암산 과외",
+            "한문 과외",
+            "체대 입시 준비",
+            "대학 입시 컨설팅",
+            "대학 입시 자소서 컨설팅",
+            "논문 컨설팅",
+            "유학 컨설팅"
+          ]
+        },
+        {
+          "list_head": "학업4",
+          "list_el": [
+            "토론 과외",
+            "영어 과외",
+            "수학 과외",
+            "국어 과외",
+            "과학 과외",
+            "사회 과외",
+            "논술 과외",
+            "편입 과외",
+            "검정고시 과외",
+            "주산/암산 과외",
+            "한문 과외",
+            "체대 입시 준비",
+            "대학 입시 컨설팅",
+            "대학 입시 자소서 컨설팅",
+            "논문 컨설팅",
+            "유학 컨설팅"
+          ]
+        },
+        {
+          "list_head": "학업5",
+          "list_el": [
+            "토론 과외",
+            "영어 과외",
+            "수학 과외",
+            "국어 과외",
+            "과학 과외",
+            "사회 과외",
+            "논술 과외",
+            "편입 과외",
+            "검정고시 과외",
+            "주산/암산 과외",
+            "한문 과외",
+            "체대 입시 준비",
+            "대학 입시 컨설팅",
+            "대학 입시 자소서 컨설팅",
+            "논문 컨설팅",
+            "유학 컨설팅"
+          ]
+        }
+      ]
+    }
+  ]
+}

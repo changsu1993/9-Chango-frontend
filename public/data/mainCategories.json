@@ -1,0 +1,60 @@
+{
+  "category": [
+    {
+      "order": 0,
+      "id": 29,
+      "title": "레슨",
+      "slug": "레슨",
+      "background_image": "https://dmmj3ljielax6.cloudfront.net/upload/cat-bg/aa7539ef-59e7-4d1c-b563-01dd65e390de.jpg"
+    },
+    {
+      "order": 1,
+      "id": 30,
+      "title": "홈/리빙",
+      "slug": "홈-리빙",
+      "background_image": "https://dmmj3ljielax6.cloudfront.net/upload/cat-bg/9e804af7-9e7a-403a-a6f8-668c3dee00ff.jpg"
+    },
+    {
+      "order": 2,
+      "id": 31,
+      "title": "이벤트",
+      "slug": "이벤트",
+      "background_image": "https://dmmj3ljielax6.cloudfront.net/upload/cat-bg/5298b12c-8293-41b7-9ede-bb9ff9936372.jpg"
+    },
+    {
+      "order": 3,
+      "id": 32,
+      "title": "비즈니스",
+      "slug": "비즈니스",
+      "background_image": "https://dmmj3ljielax6.cloudfront.net/upload/cat-bg/ce071db3-a7ba-4f91-9b3f-35de0ede7f67.jpg"
+    },
+    {
+      "order": 4,
+      "id": 33,
+      "title": "디자인/개발",
+      "slug": "디자인-개발",
+      "background_image": "https://dmmj3ljielax6.cloudfront.net/upload/cat-bg/0505d736-24f0-45bd-b103-e1727bad4e62.jpg"
+    },
+    {
+      "order": 5,
+      "id": 34,
+      "title": "건강/미용",
+      "slug": "건강-미용",
+      "background_image": "https://dmmj3ljielax6.cloudfront.net/upload/cat-bg/48d96f52-d627-4c67-b4a1-1d6556aeeda6.jpg"
+    },
+    {
+      "order": 6,
+      "id": 36,
+      "title": "알바",
+      "slug": "알바",
+      "background_image": "https://dmmj3ljielax6.cloudfront.net/upload/cat-bg/a2f1bd5b-4606-435e-82f9-684c9b211a42.png"
+    },
+    {
+      "order": 7,
+      "id": 35,
+      "title": "기타",
+      "slug": "기타",
+      "background_image": "https://dmmj3ljielax6.cloudfront.net/upload/cat-bg/149bf4f5-53a0-45ab-9ed8-1f300f27fb8d.jpg"
+    }
+  ]
+}

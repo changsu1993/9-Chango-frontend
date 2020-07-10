@@ -13,7 +13,7 @@ export default class SignUp extends Component {
     };
   }
 
-  clickHandler = (e) => {
+  SignUpClickHandler = (e) => {
     e.prevent.Default();
     const { stateEmail, statePwd, stateName } = this.state;
     if (!stateEmail || !statePwd || !stateName) {
@@ -40,7 +40,15 @@ export default class SignUp extends Component {
     this.setState({
       [e.target.name]: e.target.value,
     });
-    console.log('id', this.state.email, 'pwd', this.state.password, 'name', this.state.name);
+    const checkEmail = function (str) {
+      const reg_email = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+      return reg_email.test(str) ? false : true;
+    };
+    if (!checkEmail(this.state.email)) {
+      this.setState({
+        email: '',
+      });
+    }
   };
 
   //패스워드 유효성 검사
@@ -52,20 +60,6 @@ export default class SignUp extends Component {
     if (!checkPwd(this.state.pwd)) {
       this.setState({
         pwd: '',
-      });
-    }
-  };
-
-  //아이디 유효성 검사
-  checkEmailHandler = (e) => {
-    //아이디 유효성검사(영문,숫자 혼합 6~20)
-    const checkEmail = function (str) {
-      const reg_email = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-      return reg_email.test(str) ? false : true;
-    };
-    if (!checkEmail(this.state.email)) {
-      this.setState({
-        email: '',
       });
     }
   };
@@ -91,7 +85,9 @@ export default class SignUp extends Component {
                             this.idPwEmailHandler(e);
                           }}
                         />
-                        <div className='signup-invalid-feedback'>이름은 2글자 이상이어야 합니다.</div>
+                        <div className='signup-invalid-feedback'>
+                          이름은 2글자 이상이어야 합니다.
+                        </div>
                       </div>
                     </fieldset>
                   </div>
@@ -105,16 +101,20 @@ export default class SignUp extends Component {
                           placeholder='이메일을 입력하세요'
                           onChange={(e) => {
                             this.idPwEmailHandler(e);
-                            this.checkEmailHandler();
                           }}
                         />
-                        <div className='email-invalid-feedback'>올바르지 않은 형식의 이메일 입니다.</div>
+                        <div className='email-invalid-feedback'>
+                          올바르지 않은 형식의 이메일 입니다.
+                        </div>
                       </div>
                     </fieldset>
                   </div>
                   <div className='signup-password-wrapper'>
                     <fieldset className='signup-password-input-box'>
-                      <legend className='signup-password-label'> 비밀번호 </legend>
+                      <legend className='signup-password-label'>
+                        {' '}
+                        비밀번호{' '}
+                      </legend>
                       <div className='signup-password-input-wrapper'>
                         <input
                           className='signup-password-input'
@@ -126,20 +126,33 @@ export default class SignUp extends Component {
                             this.checkPwdHandler();
                           }}
                         />
-                        <div className='password-invalid-feedback'> 비밀번호를 다시 입력해주세요.</div>
+                        <div className='password-invalid-feedback'>
+                          {' '}
+                          비밀번호를 다시 입력해주세요.
+                        </div>
                       </div>
                     </fieldset>
                   </div>
-                  <div className='signup-term-checkbox-form' onClick={this.clickHandler}>
-                    숨고의&nbsp;<Link className='term-usage-link'>이용약관&nbsp;</Link>및&nbsp;
-                    <Link className='term-privacy-link'>개인정보취급방침&nbsp;</Link>에 동의합니다
+                  <div
+                    className='signup-term-checkbox-form'
+                    onClick={this.SignUpClickHandler}
+                  >
+                    숨고의&nbsp;
+                    <Link className='term-usage-link'>이용약관&nbsp;</Link>
+                    및&nbsp;
+                    <Link className='term-privacy-link'>
+                      개인정보취급방침&nbsp;
+                    </Link>
+                    에 동의합니다
                   </div>
                   <div className='signup-btn-wrapper'>
                     <button className='signup-btn-primary'>회원가입</button>
                   </div>
 
                   <div className='signup-with-kakao'>
-                    <button className='signup-btn-secondary'>카카오로 가입하기</button>
+                    <button className='signup-btn-secondary'>
+                      카카오로 가입하기
+                    </button>
                     <small>유저의 허락없이 게시물을 올리지 않습니다.</small>
                   </div>
                 </div>

@@ -1,0 +1,125 @@
+.Pro {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  // height: 100vh;
+
+  // .modal {
+  //   position: absolute;
+  //   width: 500px;
+  //   height: 500px;
+  //   background-color: gray;
+  //   top: 50%;
+  //   left: 50%;
+  //   transform: translate(-50%, -50%);
+  // }
+
+  .pro-title {
+    width: 930px;
+    height: 47px;
+    margin-bottom: 8px;
+    font-weight: 500;
+    line-height: 47.6px;
+    font-size: 34px;
+    letter-spacing: -0.7px;
+  }
+  .pro-category {
+    width: 930px;
+    height: 24px;
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 21px;
+
+    span {
+      text-decoration: none;
+      color: grey;
+    }
+  }
+  .pro-search-container {
+    width: 970px;
+    height: 230px;
+    .pro-search-main {
+      position: relative;
+      margin-bottom: 30px;
+      .pro-search {
+        width: 350px;
+        height: 41px;
+        padding-left: 35px;
+        font-size: 14px;
+        line-height: 21px;
+        background-color: #f2f2f2;
+        border-radius: 0.5rem;
+      }
+      .pro-search-img {
+        position: absolute;
+        left: 1.2%;
+        bottom: 32%;
+      }
+      .pro-local {
+        width: 197px;
+        height: 41px;
+        margin-left: 8px;
+        padding-left: 30px;
+        font-size: 14px;
+        line-height: 21px;
+        text-align: left;
+        background-color: #f2f2f2;
+        color: #737373;
+        border: none;
+        border-radius: 0.5rem;
+      }
+      .pro-map-img {
+        position: absolute;
+        left: 38%;
+        bottom: 26%;
+      }
+      .pro-search-category {
+        width: 197px;
+        height: 41px;
+        margin-left: 8px;
+        padding-left: 30px;
+        text-align: left;
+        font-size: 14px;
+        line-height: 21px;
+        background-color: #f2f2f2;
+        color: #737373;
+        border: none;
+        border-radius: 0.5rem;
+      }
+      .pro-category-img {
+        position: absolute;
+        left: 59.2%;
+        bottom: 32%;
+      }
+    }
+    .category-btn-form {
+      display: inline-block;
+      .category-btn {
+        width: 99px;
+        height: 36px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 18px;
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid #e1e1e1;
+        border-radius: 50rem;
+        background-color: #ffffff;
+      }
+    }
+    .pro-last-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      .pro-review {
+        width: 60px;
+        padding-right: 0px;
+        font-size: 14px;
+        border: none;
+        background-color: #ffffff;
+      }
+    }
+  }
+}

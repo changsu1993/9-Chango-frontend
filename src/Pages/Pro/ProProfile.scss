@@ -1,0 +1,80 @@
+.proprofile {
+  .proprofile-btn {
+    display: flex;
+    width: 970px;
+    height: 168px;
+    padding: 24px 0 24px 0;
+    .proprofile-img {
+      width: 120px;
+      height: 120px;
+      border: 1px solid black;
+      border-radius: 1.125rem;
+    }
+    .proprofile-main {
+      .proprofile-name {
+        margin-left: 20px;
+        margin-bottom: 5px;
+        font-size: 18px;
+        font-weight: 700;
+        text-align: left;
+        letter-spacing: -0.3px;
+        line-height: 24px;
+      }
+      .proprofile-introduce {
+        margin-left: 20px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        line-height: 21px;
+        text-align: left;
+        color: #737373;
+      }
+      .proprofile-star-main {
+        display: flex;
+        .proprofile-star {
+          display: flex;
+          margin-left: 20px;
+          margin-bottom: 20px;
+          text-align: left;
+          font-size: 16px;
+        }
+        .proprofile-average {
+          margin: 0 2px 0 5px;
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 21px;
+        }
+        .proprofile-score {
+          font-size: 12px;
+          line-height: 18px;
+          color: #737373;
+        }
+      }
+      .proprofile-review {
+        display: flex;
+        width: 826px;
+        height: 39px;
+        margin-left: 20px;
+        text-align: left;
+        .proprofile-dot {
+          width: 20px;
+          height: 20px;
+          margin-right: 10px;
+        }
+        .proprofile-review-name {
+          margin: 0 8px 0 0;
+          font-size: 14px;
+          font-weight: 700;
+        }
+        .proprofile-contents {
+          width: 717.94px;
+          height: 21px;
+          font-size: 14px;
+          color: #737373;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}

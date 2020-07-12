@@ -8,134 +8,286 @@
       "slug": "홈-리빙",
       "popular_service": [
         {
-          "pop_title": "집 인테리어1",
+          "pop_title": "집 인테리어",
           "pop_img": "https://dmmj3ljielax6.cloudfront.net/upload/service/featured_service_c29f8bea-69c8-41f6-b6b4-d7d83910bcb8.png"
         },
         {
-          "pop_title": "집 인테리어2",
-          "pop_img": "https://dmmj3ljielax6.cloudfront.net/upload/service/featured_service_c29f8bea-69c8-41f6-b6b4-d7d83910bcb8.png"
+          "pop_title": "상업공간 인테리어",
+          "pop_img": "https://dmmj3ljielax6.cloudfront.net/upload/service/featured_service_5902c8e5-6686-4b10-b035-ca0fbed4ec2b.png"
         },
         {
-          "pop_title": "집 인테리어3",
-          "pop_img": "https://dmmj3ljielax6.cloudfront.net/upload/service/featured_service_c29f8bea-69c8-41f6-b6b4-d7d83910bcb8.png"
+          "pop_title": "타일 시공",
+          "pop_img": "https://dmmj3ljielax6.cloudfront.net/upload/service/featured_service_2b6e8fd2-88e8-426a-85b9-8aaebfbaeed8.jpg"
         },
         {
-          "pop_title": "집 인테리어4",
-          "pop_img": "https://dmmj3ljielax6.cloudfront.net/upload/service/featured_service_c29f8bea-69c8-41f6-b6b4-d7d83910bcb8.png"
+          "pop_title": "욕실/화장실 리모델링",
+          "pop_img": "https://dmmj3ljielax6.cloudfront.net/upload/service/featured_service_e51c54b4-15d7-4965-ae4b-f101f7db0b8b.png"
         },
         {
-          "pop_title": "집 인테리어5",
-          "pop_img": "https://dmmj3ljielax6.cloudfront.net/upload/service/featured_service_c29f8bea-69c8-41f6-b6b4-d7d83910bcb8.png"
+          "pop_title": "페인트 시공",
+          "pop_img": "https://dmmj3ljielax6.cloudfront.net/upload/service/featured_service_58646148-55c1-4e86-b1b4-24fb3ff2c31d.jpg"
         },
         {
-          "pop_title": "집 인테리어6",
-          "pop_img": "https://dmmj3ljielax6.cloudfront.net/upload/service/featured_service_c29f8bea-69c8-41f6-b6b4-d7d83910bcb8.png"
+          "pop_title": "싱크대 교체",
+          "pop_img": "https://dmmj3ljielax6.cloudfront.net/upload/service/featured_service_2f378837-cffb-4c5f-aca6-dfd839bab8cb.jpg"
+        },
+        {
+          "pop_title": "도배장판 시공",
+          "pop_img": "https://dmmj3ljielax6.cloudfront.net/upload/service/featured_service_493885e6-2e73-4344-a6e3-3f4cd6c40d8f.jpg"
+        },
+        {
+          "pop_title": "인테리어 필름 시공",
+          "pop_img": "https://dmmj3ljielax6.cloudfront.net/upload/service/featured_service_248bebe9-3803-43fd-9528-4e69d5cb948e.jpg"
+        },
+        {
+          "pop_title": "조명 인테리어",
+          "pop_img": "https://dmmj3ljielax6.cloudfront.net/upload/service/featured_service_25edd312-bcce-4e8e-8376-5c26bbe25c29.jpg"
+        },
+        {
+          "pop_title": "해충방역",
+          "pop_img": "https://dmmj3ljielax6.cloudfront.net/upload/service/featured_service_dc77becb-2804-4af1-bae8-3626567557e2.jpg"
+        },
+        {
+          "pop_title": "이사/입주 청소 업체",
+          "pop_img": "https://dmmj3ljielax6.cloudfront.net/upload/service/featured_service_ef4a2431-e0d2-4d34-9f3d-e49a208119ae.png"
+        },
+        {
+          "pop_title": "세탁기 청소",
+          "pop_img": "https://dmmj3ljielax6.cloudfront.net/upload/service/featured_service_19243400-0b43-46ee-848a-d0ae47bf0a38.jpg"
         }
       ],
       "whole_service": [
         {
-          "list_head": "학업1",
+          "list_head": "이사",
           "list_el": [
-            "토론 과외",
-            "영어 과외",
-            "수학 과외",
-            "국어 과외",
-            "과학 과외",
-            "사회 과외",
-            "논술 과외",
-            "편입 과외",
-            "검정고시 과외",
-            "주산/암산 과외",
-            "한문 과외",
-            "체대 입시 준비",
-            "대학 입시 컨설팅",
-            "대학 입시 자소서 컨설팅",
-            "논문 컨설팅",
-            "유학 컨설팅"
+            "국내 이사",
+            "원룸/소형 이사",
+            "가정이사 (투룸 이상)",
+            "사무실/상업공간 이사",
+            "용달/화물 운송",
+            "무진동차량/냉동차량/냉장차량",
+            "짐 보관"
           ]
         },
         {
-          "list_head": "학업2",
+          "list_head": "청소업체",
           "list_el": [
-            "토론 과외",
-            "영어 과외",
-            "수학 과외",
-            "국어 과외",
-            "과학 과외",
-            "사회 과외",
-            "논술 과외",
-            "편입 과외",
-            "검정고시 과외",
-            "주산/암산 과외",
-            "한문 과외",
-            "체대 입시 준비",
-            "대학 입시 컨설팅",
-            "대학 입시 자소서 컨설팅",
-            "논문 컨설팅",
-            "유학 컨설팅"
+            "방역소독",
+            "정리수납 컨설팅",
+            "입주 사전점검 대행",
+            "라돈 저감 시공",
+            "새집/헌집증후군 시공",
+            "이사/입주 청소 업체",
+            "거주 청소 업체",
+            "사무실/상업공간 청소 업체",
+            "에어컨 청소",
+            "시스템에어컨 청소",
+            "온풍기/냉난방기 청소",
+            "실외기 청소",
+            "세탁기 청소",
+            "냉장고 청소",
+            "가전제품 청소",
+            "가구 청소",
+            "소파 청소",
+            "침대/매트리스 청소",
+            "카페트 청소",
+            "줄눈 시공",
+            "단열/결로 시공",
+            "곰팡이 제거",
+            "악취 제거",
+            "하수구 청소",
+            "바닥 청소 (왁스 코팅)",
+            "계단/화장실 청소",
+            "보일러/수도 배관 청소",
+            "누수 탐지",
+            "후드 청소",
+            "닥트/환풍구 청소",
+            "건물 내부 청소 (바닥/계단/화장실)",
+            "건물 외부 청소 (외벽/유리창)",
+            "시설/건물 관리",
+            "준공 청소",
+            "물탱크/저수조 청소",
+            "화재 복구/청소",
+            "유품정리/특수청소",
+            "해충방역",
+            "바퀴벌레 퇴치",
+            "비둘기 퇴치",
+            "단체 세탁"
           ]
         },
         {
-          "list_head": "학업3",
+          "list_head": "인테리어",
           "list_el": [
-            "토론 과외",
-            "영어 과외",
-            "수학 과외",
-            "국어 과외",
-            "과학 과외",
-            "사회 과외",
-            "논술 과외",
-            "편입 과외",
-            "검정고시 과외",
-            "주산/암산 과외",
-            "한문 과외",
-            "체대 입시 준비",
-            "대학 입시 컨설팅",
-            "대학 입시 자소서 컨설팅",
-            "논문 컨설팅",
-            "유학 컨설팅"
+            "식물 관리/렌탈",
+            "빨래건조대 설치 및 수리",
+            "환풍기 교체/설치",
+            "주택 건축",
+            "주택 리모델링",
+            "집 수리",
+            "집 인테리어",
+            "아파트 인테리어",
+            "상업공간 인테리어",
+            "조명 인테리어",
+            "홈 스타일링",
+            "도배 시공",
+            "장판 시공",
+            "도배장판 시공",
+            "인테리어 필름 시공",
+            "페인트 시공",
+            "아트월 시공",
+            "타일 시공",
+            "줄눈 시공",
+            "나노코팅 시공",
+            "욕실/화장실 리모델링",
+            "주방 리모델링",
+            "주방후드 교체/설치",
+            "닥트 설치 및 수리",
+            "싱크대 교체",
+            "마루 시공",
+            "마루 보수",
+            "바닥재 시공",
+            "에폭시 바닥 시공",
+            "카페트 시공",
+            "층간소음매트 시공",
+            "방음 시공",
+            "가벽/파티션 인테리어",
+            "칸막이 시공",
+            "중문 시공",
+            "몰딩 시공",
+            "베란다/발코니 확장",
+            "단열/결로 시공",
+            "탄성/바이오세라믹 코트",
+            "코킹 시공",
+            "수납 가구 제작 (신발장/붙박이장 등)",
+            "신발장 시공",
+            "붙박이장 시공",
+            "가구 리폼",
+            "핸드레일 설치 및 수리",
+            "앙카/해먹 설치",
+            "에어커튼 설치",
+            "업소용 주방기구 구매",
+            "업소용 주방기구 판매"
           ]
         },
         {
-          "list_head": "학업4",
+          "list_head": "야외 시공",
           "list_el": [
-            "토론 과외",
-            "영어 과외",
-            "수학 과외",
-            "국어 과외",
-            "과학 과외",
-            "사회 과외",
-            "논술 과외",
-            "편입 과외",
-            "검정고시 과외",
-            "주산/암산 과외",
-            "한문 과외",
-            "체대 입시 준비",
-            "대학 입시 컨설팅",
-            "대학 입시 자소서 컨설팅",
-            "논문 컨설팅",
-            "유학 컨설팅"
+            "벌초/예초",
+            "벽화 시공",
+            "간판 제작",
+            "어닝/차양 시공",
+            "대형천막 시공",
+            "옥상공사/방수",
+            "지붕 공사",
+            "데크 시공",
+            "조경 공사",
+            "인조잔디 시공",
+            "조형물 시공",
+            "LED 제작",
+            "비닐하우스 시공",
+            "정화조 설치 및 수리",
+            "용접 시공",
+            "스테인레스 제작(자전거 거치대, 국기게양대)",
+            "대문자바라 설치"
           ]
         },
         {
-          "list_head": "학업5",
+          "list_head": "부동산",
           "list_el": [
-            "토론 과외",
-            "영어 과외",
-            "수학 과외",
-            "국어 과외",
-            "과학 과외",
-            "사회 과외",
-            "논술 과외",
-            "편입 과외",
-            "검정고시 과외",
-            "주산/암산 과외",
-            "한문 과외",
-            "체대 입시 준비",
-            "대학 입시 컨설팅",
-            "대학 입시 자소서 컨설팅",
-            "논문 컨설팅",
-            "유학 컨설팅"
+            "집 사기",
+            "집 팔기",
+            "집 전세/월세 구하기",
+            "집 전세/월세 내놓기",
+            "사무실 임대"
+          ]
+        },
+        {
+          "list_head": "철거/정리",
+          "list_el": ["철거", "폐기물 처리", "정리수납 컨설팅"]
+        },
+        {
+          "list_head": "펫/반려동물",
+          "list_el": [
+            "애견 훈련",
+            "반려견 산책",
+            "펫 호텔",
+            "펫 시터 (주인 집에서)",
+            "펫 시터 (시터 집에서)",
+            "펫 미용",
+            "펫 미용용품 만들기 레슨",
+            "펫 사료/간식 만들기 레슨",
+            "펫 미용용품 제작",
+            "펫 사료/간식 제작",
+            "펫 홈 클리닝",
+            "반려동물 장례",
+            "반려동물관리 레슨"
+          ]
+        },
+        {
+          "list_head": "문/창문",
+          "list_el": [
+            "문 설치 및 수리",
+            "도어 시공",
+            "중문 시공",
+            "샷시 설치 및 수리",
+            "유리 제작 및 시공",
+            "유리 필름/시트 시공",
+            "단열필름 시공",
+            "블라인드/커튼 제작/설치/수리",
+            "방충망 설치 및 수리",
+            "방범창 설치 및 수리",
+            "열쇠/도어락 설치 및 수리"
+          ]
+        },
+        {
+          "list_head": "수도/보일러/전기",
+          "list_el": [
+            "누수 탐지",
+            "수도 관련 설치 및 수리",
+            "보일러 설치 및 수리",
+            "온수기 설치 및 수리",
+            "전기 배선 설치 및 수리",
+            "인터넷/랜 공사"
+          ]
+        },
+        {
+          "list_head": "가전제품",
+          "list_el": [
+            "음식물처리기 설치 및 수리",
+            "전자제품 수리",
+            "에어컨 설치 및 수리",
+            "냉장고 설치 및 수리",
+            "세탁기 설치 및 수리",
+            "벽걸이TV 설치 및 철거",
+            "인덕션(전기레인지) 설치",
+            "CCTV 설치",
+            "컴퓨터 수리",
+            "아이폰 수리",
+            "신규 핸드폰구매",
+            "전동킥보드/전동휠 수리"
+          ]
+        },
+        {
+          "list_head": "가구",
+          "list_el": [
+            "수납 가구 제작 (신발장/붙박이장 등)",
+            "가구/목공예 제작",
+            "가구 수리",
+            "가구 리폼",
+            "피아노 운반",
+            "피아노 조율/수리",
+            "악기 조율/수리"
+          ]
+        },
+        {
+          "list_head": "도우미",
+          "list_el": [
+            "가사 도우미",
+            "등하원 도우미",
+            "집 청소 도우미",
+            "산후/육아/아이돌보미",
+            "실버/간병 도우미",
+            "요리 도우미"
           ]
         }
       ]

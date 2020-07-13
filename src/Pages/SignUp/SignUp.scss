@@ -1,0 +1,223 @@
+.customer-signup-body {
+  padding: 80px 0;
+  .signup-form-wrapper {
+    margin-right: -15px;
+    margin-left: -15px;
+    .signup-form {
+      padding-right: 15px;
+      padding-left: 15px;
+      h1 {
+        text-align: center;
+        margin-bottom: 48px;
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 60px;
+        letter-spacing: -0.7px;
+        margin-block-start: 10.72px;
+        margin-block-end: 10.72px;
+      }
+      .signup-card {
+        width: 450px;
+        border: 1px solid #f2f2f2;
+        border-radius: 4px;
+        padding: 24px;
+        margin: 0 auto;
+        background-color: #fff;
+        .signup-form-row {
+          margin-right: -5px;
+          margin-left: -5px;
+          .signup-name-wrapper {
+            padding-right: 5px;
+            padding-left: 5px;
+            flex: 0 0 100%;
+            max-width: 100%;
+            .signup-name-input-box {
+              margin-bottom: 16px;
+              ::placeholder {
+                color: #afadad;
+                font-size: 14.5px;
+              }
+              .signup-name-label {
+                padding-bottom: calc(11px + 1px);
+                line-height: 1.5;
+                width: 100%;
+                padding-inline-start: 2px;
+                padding-inline-end: 2px;
+              }
+              .signup-name-input-wrapper {
+                .signup-name-input {
+                  width: 100%;
+                  font-weight: 400;
+                  line-height: 2.5;
+                  font-size: 16px;
+                  padding: 6px 18.24px;
+                  border-radius: 4px;
+                  border-color: #ff3131;
+                  color: #323232;
+                  background-color: #fff;
+                  border: 1px solid #e1e1e1;
+                }
+                .signup-invalid-feedback {
+                  display: none;
+                  margin-top: 4px;
+                  font-size: 80%;
+                  color: #ff3131;
+                }
+              }
+            }
+          }
+          .signup-email-wrapper {
+            padding-right: 5px;
+            padding-left: 5px;
+            -webkit-box-flex: 0;
+            flex: 0 0 100%;
+            max-width: 100%;
+            .signup-email-input-box {
+              margin-bottom: 16px;
+              ::placeholder {
+                color: #afadad;
+                font-size: 14.5px;
+              }
+              .signup-email-label {
+                padding-bottom: calc(12px);
+                font-size: inherit;
+                line-height: 1.5;
+                padding-inline-start: 2px;
+                padding-inline-end: 2px;
+              }
+              .signup-email-input-wrapper {
+                .signup-email-input {
+                  line-height: 2.5;
+                  font-size: 16px;
+                  padding: 6px 18.24px;
+                  border-radius: 4px;
+                  width: 100%;
+                  color: #323232;
+                  background-color: #fff;
+                  border: 1px solid #e1e1e1;
+                  font-weight: 400;
+                }
+                .email-invalid-feedback {
+                  display: none;
+                  width: 100%;
+                  margin-top: 4px;
+                  font-size: 80%;
+                  color: #ff3131;
+                }
+              }
+            }
+          }
+          .signup-password-wrapper {
+            padding-right: 5px;
+            padding-left: 5px;
+            flex: 0 0 100%;
+            max-width: 100%;
+            .signup-password-input-box {
+              margin-bottom: 16px;
+              ::placeholder {
+                color: #afadad;
+                font-size: 14.5px;
+              }
+              .signup-password-label {
+                padding-bottom: calc(12px);
+                line-height: 1.5;
+                padding-inline-start: 2px;
+                padding-inline-end: 2px;
+              }
+              .signup-password-input-wrapper {
+                .signup-password-input {
+                  line-height: 2.5;
+                  font-size: 16px;
+                  padding: 6px 18.24px;
+                  border-radius: 4px;
+                  width: 100%;
+                  color: #323232;
+                  background-color: #fff;
+                  background-clip: padding-box;
+                  border: 1px solid #e1e1e1;
+                  font-weight: 400;
+                }
+                .password-invalid-feedback {
+                  display: none;
+                  width: 100%;
+                  margin-top: 4px;
+                  font-size: 80%;
+                  color: #ff3131;
+                }
+              }
+            }
+          }
+          .signup-term-checkbox-form {
+            margin-top: 8px;
+            font-size: 12.8px;
+            padding-right: 5px;
+            padding-left: 5px;
+            flex: 0 0 100%;
+            max-width: 100%;
+            position: relative;
+            width: 100%;
+            font-size: 12px;
+            .term-usage-link,
+            .term-privacy-link {
+              color: #4785ff !important;
+              text-decoration: none;
+              background-color: transparent;
+            }
+          }
+          .signup-btn-wrapper {
+            padding-right: 5px;
+            padding-left: 5px;
+            position: relative;
+            width: 100%;
+            .signup-btn-primary {
+              margin-top: 16px;
+              width: 100%;
+              font-weight: 500;
+              color: #fff;
+              background-color: #00c7ae;
+              border-color: #00c7ae;
+              text-align: center;
+              vertical-align: middle;
+              border: 1px solid transparent;
+              padding: 11px 12px;
+              font-size: 16px;
+              line-height: 1.5;
+              border-radius: 4px;
+              font: 400 13.3333px Arial;
+              font-size: 14px;
+            }
+          }
+          .signup-with-kakao {
+            padding-right: 5px;
+            padding-left: 5px;
+            width: 100%;
+            .signup-btn-secondary {
+              margin-top: 16px;
+              width: 100%;
+              font-weight: 500;
+              color: black;
+              background-color: rgba(255, 238, 51, 0.99);
+              border-color: rgba(255, 238, 51, 0.99);
+              display: inline-block;
+              text-align: center;
+              border: 1px solid transparent;
+              padding: 11px 12px;
+              font-size: 16px;
+              line-height: 1.5;
+              border-radius: 4px;
+              font: 400 13.3333px Arial;
+              font-size: 14px;
+            }
+            small {
+              display: block;
+              text-align: center;
+              margin-top: 8px;
+              font-size: 12px;
+              font-weight: 400;
+            }
+          }
+        }
+      }
+    }
+  }
+}

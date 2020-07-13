@@ -1,0 +1,157 @@
+.login-body {
+  position: relative;
+
+  .login-page {
+    padding: 80px 0px;
+    .welcome-message {
+      text-align: center;
+      margin-bottom: 48px;
+      font-size: 32px;
+      line-height: 48px;
+      letter-spacing: 0.6px;
+    }
+    .login-card {
+      width: 100%;
+      max-width: 390px;
+      min-width: 0;
+      margin: 0 auto;
+      border: 1px solid #f2f2f2;
+      border-radius: 4px;
+      padding: 24px;
+      box-shadow: none;
+      background-color: #fff;
+      .login-form {
+        display: block;
+        margin-top: 0em;
+        .login-form-row {
+          margin-right: -5px;
+          margin-left: -5px;
+          .email-section-wrapper {
+            padding-right: 5px;
+            padding-left: 5px;
+            flex: 0 0 100%;
+            .email-input-box {
+              width: 100%;
+              margin-bottom: 16px;
+              .email-label-value {
+                font-size: 14px;
+                padding-bottom: 12px;
+              }
+              .email-input-wrapper {
+                .email-input-item {
+                  width: 100%;
+                  border: 1px solid #e1e1e1;
+                  border-radius: 4px;
+                  padding: 6px 18.24px;
+                  line-height: 2.5;
+                  font-size: 16px;
+                  font-weight: 400;
+                }
+                .invalid-feedback {
+                  display: block;
+                  width: 100%;
+                  margin-top: 4px;
+                  font-size: 80%;
+                  color: rgb(255, 49, 49);
+                }
+              }
+            }
+          }
+          .password-section-wrapper {
+            padding-right: 5px;
+            padding-left: 5px;
+            .password-input-box {
+              margin-bottom: 16px;
+              .password-label-input {
+                font-size: 14px;
+                padding-bottom: 12px;
+              }
+              .password-input-wrapper {
+                display: block;
+                .password-input-box {
+                  width: 100%;
+                  border: 1px solid #e1e1e1;
+                  border-radius: 4px;
+                  padding: 6px 18.24px;
+                  line-height: 2.5;
+                  font-size: 16px;
+                }
+                .invalid-feedback-return {
+                  width: 100%;
+                  margin-top: 4px;
+                  font-size: 80%;
+                  color: rgb(255, 49, 49);
+                }
+              }
+            }
+          }
+          .reset-password-link {
+            position: relative;
+            margin-bottom: 16px;
+            padding-right: 5px;
+            padding-left: 5px;
+
+            .find-password-link {
+              margin-bottom: 16px;
+              color: rgb(71, 133, 255) !important;
+              font-size: 14px;
+              line-height: 21px;
+              letter-spacing: 0.2px;
+              padding-right: 5px;
+              padding-left: 5px;
+              text-decoration: none;
+            }
+          }
+
+          .login-button-wrapper {
+            padding-right: 5px;
+            padding-left: 5px;
+            .login-button-primary {
+              width: 100%;
+              margin-bottom: 16px;
+              border-width: 1px;
+              border-style: solid;
+              border-image: initial;
+              border-radius: 4px;
+              border-color: rgb(0, 199, 174);
+              padding: 11px 12px;
+              color: rgb(255, 255, 255);
+              background-color: rgb(0, 199, 174);
+              text-align: center;
+              font-size: 16px;
+              line-height: 1.5;
+            }
+          }
+          .kakao-button-wrapper {
+            padding-right: 5px;
+            padding-left: 5px;
+
+            .kakao-login-button-img {
+              width: 100%;
+              border-color: rgba(255, 238, 51, 0.99);
+              border: none;
+              border-radius: 4px;
+              padding: 11px 12px;
+              color: black;
+              background-color: rgba(255, 238, 51, 0.99);
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+    .signup-link {
+      display: block;
+      margin-top: 16px;
+      text-align: center;
+
+      .no-account-link {
+        font-size: 14px;
+        line-height: 21px;
+        font-weight: 400;
+        letter-spacing: -0.2px;
+        text-decoration: none;
+      }
+    }
+  }
+}

@@ -6,11 +6,10 @@ export default class MainNavCategoryLi extends Component {
     const { navData, handleCurrentCate } = this.props;
     return (
       <li
-        className='main-nav-category-li'
-        key={navData.id}
+        className='MainNavCategoryLi'
         onClick={() => handleCurrentCate(navData.slug)}
       >
-        <Link to={`/main/${navData.slug}`} style={{ textDecoration: 'none' }}>
+        <Link to={`/main/${navData.slug}`}>
           <div className='cate-wrap'>
             <img alt={navData.title} src={navData.icon_image} />
             <p>{navData.title}</p>

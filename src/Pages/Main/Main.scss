@@ -92,31 +92,34 @@
       max-width: 1200px;
       margin: 0 auto;
 
-      &-li {
+      .MainNavCategoryLi {
         width: 12.5%;
         height: 104px;
         padding: 6px 8px;
         cursor: pointer;
 
-        .cate-wrap {
-          padding: 8px 0;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
+        a {
+          text-decoration: none;
+          .cate-wrap {
+            padding: 8px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
 
-          &:hover {
-            padding-top: 0;
+            &:hover {
+              padding-top: 0;
 
-            img {
-              padding-bottom: 8px;
+              img {
+                padding-bottom: 8px;
+              }
             }
-          }
 
-          p {
-            line-height: 24px;
-            font-size: 14px;
-            color: #323232;
-            text-align: center;
+            p {
+              line-height: 24px;
+              font-size: 14px;
+              color: #323232;
+              text-align: center;
+            }
           }
         }
       }

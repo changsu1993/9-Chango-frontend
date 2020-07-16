@@ -33,10 +33,12 @@ export default class Login extends Component {
 
   //일반 로그인 클릭 핸들러
   loginClickHandler = (e) => {
-    e.preventDefault();
-
-    const [emailState, pwdState] = this.state;
-    if (this.state.loginId.length >= 5 && this.state.loginPwd.length >= 5 && this.state.loginId.includes('@' && '.')) {
+    const { emailState, pwdState, loginId, loginPwd } = this.state;
+    if (
+      loginId.length >= 5 &&
+      loginPwd.length >= 5 &&
+      loginId.includes('@' && '.')
+    ) {
       fetch(`${Backend_IP}/account/login`, {
         method: 'POST',
         body: JSON.stringify({
@@ -84,8 +86,8 @@ export default class Login extends Component {
               <form className='login-form'>
                 <div className='login-form-row'>
                   <div className='email-section-wrapper'>
-                    <fieldset className='email-input-box'>
-                      <legend className='email-label-value'> 이메일 </legend>
+                    <div className='email-input-box'>
+                      <div className='email-label-value'> 이메일 </div>
                       <div className='email-input-wrapper'>
                         <input
                           className='email-input-item'
@@ -96,15 +98,20 @@ export default class Login extends Component {
                           }}
                           type='email'
                         />
-                        <div className='invalid-feedback' style={{ display: this.state.errorId ? 'block' : 'none' }}>
+                        <div
+                          className='invalid-feedback'
+                          style={{
+                            display: this.state.errorId ? 'block' : 'none',
+                          }}
+                        >
                           이메일 형식이 아닙니다. 다시 입력해주세요.
                         </div>
                       </div>
-                    </fieldset>
+                    </div>
                   </div>
                   <div className='password-section-wrapper'>
-                    <fieldset className='password-input-box'>
-                      <legend className='password-label-input'> 비밀번호 </legend>
+                    <div className='password-input-box'>
+                      <div className='password-label-input'> 비밀번호 </div>
                       <div className='password-input-wrapper'>
                         <input
                           className='password-input-box'
@@ -115,17 +122,25 @@ export default class Login extends Component {
                           }}
                           type='password'
                         />
-                        <small className='invalid-feedback' style={{ display: this.state.errorPwd ? 'block' : 'none' }}>
+                        <small
+                          className='invalid-feedback'
+                          style={{
+                            display: this.state.errorPwd ? 'block' : 'none',
+                          }}
+                        >
                           비밀번호가 틀렸습니다.
                         </small>
                       </div>
-                    </fieldset>
+                    </div>
                   </div>
                   <div className='reset-password-link'>
                     <Link className='find-password-link'>비밀번호 찾기</Link>
                   </div>
                   <div className='login-button-wrapper'>
-                    <button className='login-button-primary' onClick={this.loginClickHandler}>
+                    <button
+                      className='login-button-primary'
+                      onClick={this.loginClickHandler}
+                    >
                       로그인
                       <span>
                         <div>

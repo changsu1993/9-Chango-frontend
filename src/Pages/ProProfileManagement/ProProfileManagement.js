@@ -32,9 +32,13 @@ const ProProfileManagementPage = () => {
                 <ThumbContainer>
                   <Thumb>
                     <UserProfilePicture>
-                      <ClickIcon></ClickIcon>
+                      <ClickIcon />
                       <IconClickInput>
-                        <CustomFileInput type='file' label='Upload' accept='.txt'></CustomFileInput>
+                        <CustomFileInput
+                          type='file'
+                          label='Upload'
+                          accept='.txt'
+                        />
                         <CustomFileLabel></CustomFileLabel>
                       </IconClickInput>
                     </UserProfilePicture>
@@ -73,7 +77,12 @@ const ProProfileManagementPage = () => {
                     <div className='value' display='block'>
                       홍정민
                     </div>
-                    <input type='text' placeholder='이름 또는 업체명을 입력해 주세요' className='form-control-is-valid' display='none'></input>
+                    <input
+                      type='text'
+                      placeholder='이름 또는 업체명을 입력해 주세요'
+                      className='form-control-is-valid'
+                      display='none'
+                    ></input>
                     <small display='none'></small>
                     <div className='invalid-feedback'></div>
                   </div>

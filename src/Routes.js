@@ -12,6 +12,9 @@ import Login from 'Pages/Login/Login';
 import SignUp from 'Pages/SignUp/SignUp';
 import Pro from 'Pages/Pro/Pro';
 import ProProfileManagement from 'Pages/ProProfileManagement/ProProfileManagement';
+import ProDetail from 'Pages/Pro/ProDetail';
+import ProProfile from 'Pages/Pro/ProProfile';
+import Local from './Components/Local/Local';
 
 class Routes extends React.Component {
   render() {
@@ -29,6 +32,9 @@ class Routes extends React.Component {
               path='/pro-management'
               component={ProProfileManagement}
             />
+            <Route exact path='/prodetail' component={ProDetail} />
+            <Route exact path='/proprofile' component={ProProfile} />
+            <Route exact path='/local' component={Local} />
             <Redirect from='*' to='/main/레슨' />
           </Switch>
         </ScrollToTop>

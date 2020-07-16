@@ -1,73 +1,66 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import HireFormList from './HireFormList';
+import HireFormInput from './HireFormInput';
+import HireFormGender from './HireFormGender';
+import HireFormLocation from './HireFormLocation';
+import HireFormDates from './HireFormDates';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
-import {
-  faExclamationCircle,
-  faCheckSquare,
-} from '@fortawesome/fontawesome-free-solid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import styled from 'styled-components';
+import { faExclamationCircle } from '@fortawesome/fontawesome-free-solid';
 
-const HireUserRequest = (props) => {
-  const [checkValue, setCheckValue] = useState('');
-  const [formData, setFormData] = useState({});
+const HireUserRequest = ({ hireQnA }) => {
+  const [nowQnA, setNowQnA] = useState(0);
+
+  const changeGage = (lengthNum) =>
+    ((lengthNum + 1) / (hireQnA && hireQnA.length)) * 100;
+
+  const changeFormType = (formType) => {
+    switch (formType) {
+      case '체크박스':
+        return <HireFormList hireQnA={hireQnA} nowQnA={nowQnA} />;
+      case '라디오버튼':
+        return <HireFormList hireQnA={hireQnA} nowQnA={nowQnA} />;
+      case '매칭 성별: 선호성별 선택':
+        return <HireFormGender hireQnA={hireQnA} nowQnA={nowQnA} />;
+      case '날짜 옵션+지정':
+        return <HireFormDates />;
+      case '매칭 GPS좌표: 주소 3단계':
+        return <HireFormLocation hireQnA={hireQnA} nowQnA={nowQnA} />;
+      case '텍스트박스':
+        return <HireFormInput hireQnA={hireQnA} nowQnA={nowQnA} />;
+      default:
+        break;
+    }
+  };
+
+  const changeAnswerCount = (operator) => {
+    if (operator === '-') {
+      return nowQnA > 0 ? setNowQnA(nowQnA - 1) : 0;
+    } else {
+      return nowQnA > 0 && nowQnA > hireQnA && hireQnA.length
+        ? hireQnA.length - 1
+        : setNowQnA(nowQnA + 1);
+    }
+  };
 
   return (
     <UserFormWrap>
-      <FormHeader>
-        {/* 1. 질문 배열의 길이로 progress gage 채우기
-        2. 70% 이상일때 퍼센트 나오고 5% 단위로 증가
-        3. width로 관리*/}
+      <FormHeader gageWidth={`${changeGage(nowQnA)}%`}>
         <div className='form-header-progress'>
-          <div className='form-header-progress-gage'></div>
+          <div className='gage'></div>
         </div>
-        <div className='form-header-persent'>70%</div>
+        <div className='form-header-persent'>
+          {changeGage(nowQnA).toFixed(0)}%
+        </div>
       </FormHeader>
       <FormMain>
         <div className='form-setting'>
-          {/* 질문 */}
-          <h3 className='form-question'>어떤 레슨을 원하시나요?</h3>
-          {/* input-체크박스-기타는 입력 */}
-          <ul>
-            <li className='form-answer'>
-              <div className='form-answer-type'>
-                <label value='드로잉' onClick={() => setCheckValue('드로잉')}>
-                  <input type='checkbox' />
-                  <span className='check-box'>
-                    <FontAwesomeIcon icon={faCheckSquare} />
-                  </span>
-                  <span className='answer'>아무 코딩</span>
-                </label>
-              </div>
-              <div
-                className='form-answer-type-input'
-                style={{ display: 'none' }}
-              >
-                <input type='text' placeholder='ex. 프롭스의 신 창고' />
-              </div>
-            </li>
-            <li className='form-answer'>
-              <div className='form-answer-type'>
-                <label value='드로잉' onClick={() => setCheckValue('드로잉')}>
-                  <input type='checkbox' />
-                  <span className='check-box'>
-                    <FontAwesomeIcon icon={faCheckSquare} />
-                  </span>
-                  <span className='answer'>기타</span>
-                </label>
-              </div>
-              <div className='form-answer-type-input'>
-                <input type='text' placeholder='ex. 프롭스의 신 창고' />
-              </div>
-            </li>
-          </ul>
-          {/* input - 라디오버튼-기타는 입력, 레슨생 성별 */}
-          {/* input - text */}
-          {/* select - 고수 성별 (무관으로 default) */}
-          {/* select - 지역(시/군,구/동), 서울,경기,인천 */}
-          {/* 달력 */}
-          {/* 사진첨부 */}
-          {/* 인증 - 일단은 보류 */}
+          <h3 className='form-question'>
+            {hireQnA && hireQnA[nowQnA].question}
+          </h3>
+          {changeFormType(hireQnA && hireQnA[nowQnA].type.title)}
         </div>
       </FormMain>
       <FormFooter>
@@ -80,14 +73,34 @@ const HireUserRequest = (props) => {
         input text(빈 칸을 채워주세요)
         달력(날짜를 선택해주세요)
         */}
-        <div className='form-error-msg'>
+        {/* <div className='form-error-msg'>
           <FontAwesomeIcon icon={faExclamationCircle} /> 옵션을 하나 이상
           선택하셔야합니다
         </div>
+        <div className='form-error-msg'>
+          <FontAwesomeIcon icon={faExclamationCircle} /> 옵션을 선택해주세요
+        </div>
+        <div className='form-error-msg'>
+          <FontAwesomeIcon icon={faExclamationCircle} /> 주소를 선택해주세요
+        </div>
+        <div className='form-error-msg'>
+          <FontAwesomeIcon icon={faExclamationCircle} /> 빈 칸을 채워주세요
+        </div>
+        <div className='form-error-msg'>
+          <FontAwesomeIcon icon={faExclamationCircle} /> 날짜를 선택해주세요
+        </div> */}
         <div className='form-btn-wrap'>
           {/* 다음 버튼 마지막 질문엔 -> 요청 보내기 */}
-          <ButtonPre type='button'>이전</ButtonPre>
-          <ButtonNext type='button'>다음</ButtonNext>
+          <ButtonPre
+            type='button'
+            onClick={() => changeAnswerCount('-')}
+            style={nowQnA === 0 ? { display: 'none' } : {}}
+          >
+            이전
+          </ButtonPre>
+          <ButtonNext type='button' onClick={() => changeAnswerCount('+')}>
+            다음
+          </ButtonNext>
         </div>
       </FormFooter>
     </UserFormWrap>
@@ -114,8 +127,8 @@ const FormHeader = styled.header`
     background-color: #f2f2f2;
     box-shadow: none;
 
-    &-gage {
-      width: 70%;
+    .gage {
+      width: ${(props) => props.gageWidth};
       height: 4px;
       /* 변화각도 , 처음색, 끝색 / 두 개 이상의 색이 직선을 따라 점진적으로 변화 */
       background: linear-gradient(150deg, var(--primary), #03b9c9);
@@ -144,65 +157,6 @@ const FormMain = styled.main`
       font-size: 24px;
       font-weight: 500;
       letter-spacing: -0.5px;
-    }
-
-    ul {
-      border: 1px solid #e7e7e7;
-      border-radius: 4px;
-
-      .form-answer {
-        padding: 15px 25px;
-        border-bottom: 1px solid #e7e7e7;
-
-        &:last-child {
-          border-bottom: 0;
-        }
-
-        &-type {
-          label {
-            display: inline-block;
-            line-height: 23px;
-            width: 100%;
-            cursor: pointer;
-
-            input[type='checkbox'] {
-              display: none;
-            }
-
-            input[type='checkbox'] + .check-box {
-              vertical-align: top;
-              margin-right: 20px;
-              font-size: 23px;
-              color: #e7e7e7;
-            }
-
-            input[type='checkbox']:checked + .check-box {
-              color: var(--primary);
-            }
-          }
-        }
-
-        &-type-input {
-          padding: 10px 37px 0;
-
-          input[type='text'] {
-            height: 48px;
-            width: 100%;
-            padding: 11px 16px;
-            border: 1px solid #e7e7e7;
-            border-radius: 4px;
-            cursor: text;
-
-            &:focus {
-              outline: none;
-            }
-
-            &::placeholder {
-              color: var(--gray);
-            }
-          }
-        }
-      }
     }
   }
 `;

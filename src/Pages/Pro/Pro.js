@@ -3,6 +3,7 @@ import ProProfiles from 'Pages/Pro/ProProfile';
 import Portal from '../../Components/Local/Local';
 import LocalPortal from '../../Components/Local/LocalPortal';
 import { pro_DB } from 'Pages/common';
+import ProMap from './ProMap';
 import search from '../../Images/search.png';
 import map from '../../Images/map.png';
 import category from '../../Images/category.png';
@@ -16,18 +17,18 @@ class Pro extends Component {
       totalPerson: [],
       ProProile: [],
       Local: false,
-      // isModalUp: true,
+      searchBox: false,
     };
   }
 
   componentDidMount() {
-    fetch(`${pro_DB}/data/Pro.json`)
+    fetch('http://10.58.2.73:8000/account/prolist')
       .then((res) => res.json())
       .then((res) =>
         this.setState({
-          PersonData: res.data,
-          totalPerson: res.total,
-          ProProile: res.proprofile,
+          // PersonData: res.data,
+          // totalPerson: res.total,
+          ProProile: res.pro_list,
         })
       );
   }
@@ -44,12 +45,18 @@ class Pro extends Component {
     });
   };
 
+  inputSearchModal = () => {
+    this.setState({ searchBox: !this.state.searchBox });
+  };
+
+  inputCloseModal = () => {
+    this.setState({ searchBox: false });
+  };
+
   render() {
-    const { PersonData, totalPerson, ProProile, isModalUp, Local } = this.state;
-    console.log(PersonData, totalPerson);
+    const { PersonData, ProProile, Local, searchBox } = this.state;
     return (
       <div className='Pro'>
-        {/* {isModalUp && <div className='modal'>hello</div>} */}
         <div className='pro-main'>
           <div className='pro-title'>고수찾기</div>
           <div className='pro-category'>
@@ -62,6 +69,7 @@ class Pro extends Component {
           <div className='pro-search-container'>
             <div className='pro-search-main'>
               <input
+                onClick={this.inputSearchModal}
                 className='pro-search'
                 placeholder='고수,지역,서비스를 검색해보세요'
               />
@@ -91,16 +99,15 @@ class Pro extends Component {
                 width='15px'
               />
             </div>
-            {PersonData.length > 0 &&
-              PersonData.map((el, id) => {
-                return (
-                  <div className='category-btn-form' key={id}>
-                    <button className='category-btn'>{el.name}</button>
-                  </div>
-                );
-              })}
+            {ProMap.data.map((btnlist) => {
+              return (
+                <div className='category-btn-form'>
+                  <button className='category-btn'>{btnlist.name}</button>
+                </div>
+              );
+            })}
             <div className='pro-last-container'>
-              <span>{totalPerson[0] && totalPerson[0].total}명의 고수</span>
+              <span>{ProProile && ProProile.length}명의 고수</span>
               <select className='pro-review'>
                 <option>리뷰순</option>
                 <option>최근활동순</option>
@@ -108,18 +115,39 @@ class Pro extends Component {
                 <option>고용순</option>
               </select>
             </div>
+            <div
+              className={
+                searchBox ? 'pro-search-modal' : 'pro-search-modal-not-active'
+              }
+            >
+              <p>인기 키워드</p>
+              {ProMap.data.map((btnlist) => {
+                return (
+                  <button className='pro-search-modal-style'>
+                    {btnlist.name}
+                  </button>
+                );
+              })}
+              <button
+                className='pro-search-cancel'
+                onClick={this.inputCloseModal}
+              >
+                취소
+              </button>
+            </div>
           </div>
           <div className='proprofiles-container'>
             {ProProile.map((proprofile) => {
               return (
                 <ProProfiles
-                  id={proprofile.id}
-                  profileImage={proprofile.profileImage}
-                  companyName={proprofile.companyName}
-                  reviewRate={proprofile.review_rate}
-                  reviewCount={proprofile.review_count}
-                  name={proprofile.name}
-                  contents={proprofile.contents}
+                  proId={proprofile.provider_id}
+                  id={proprofile.provider_name}
+                  profileImage={
+                    proprofile.profile_img && proprofile.profile_img.image_url
+                  }
+                  companyName={proprofile.introduce}
+                  name={proprofile.provider_name}
+                  contents={proprofile.introduce}
                 />
               );
             })}

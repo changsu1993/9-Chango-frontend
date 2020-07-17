@@ -22,6 +22,10 @@ class Local extends Component {
       });
   }
 
+  listClick = () => {
+    console.log('yapp!!yapp!!');
+  };
+
   render() {
     const { onClose } = this.props;
     const { local } = this.state;
@@ -47,7 +51,11 @@ class Local extends Component {
                 {local.length > 0 &&
                   local.map((el) => {
                     return (
-                      <li className='local-list' key={el.name}>
+                      <li
+                        className='local-list'
+                        onClick={this.listClick}
+                        key={el.name}
+                      >
                         {el.name}
                       </li>
                     );

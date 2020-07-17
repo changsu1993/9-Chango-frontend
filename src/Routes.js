@@ -32,7 +32,7 @@ class Routes extends React.Component {
               path='/pro-management'
               component={ProProfileManagement}
             />
-            <Route exact path='/prodetail' component={ProDetail} />
+            <Route exact path='/prodetail/:proId' component={ProDetail} />
             <Route exact path='/proprofile' component={ProProfile} />
             <Route exact path='/local' component={Local} />
             <Redirect from='*' to='/main/레슨' />

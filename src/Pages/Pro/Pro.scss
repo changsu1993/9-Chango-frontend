@@ -2,18 +2,6 @@
   display: flex;
   justify-content: center;
   position: relative;
-  // height: 100vh;
-
-  // .modal {
-  //   position: absolute;
-  //   width: 500px;
-  //   height: 500px;
-  //   background-color: gray;
-  //   top: 50%;
-  //   left: 50%;
-  //   transform: translate(-50%, -50%);
-  // }
-
   .pro-title {
     width: 930px;
     height: 47px;
@@ -29,13 +17,13 @@
     margin-bottom: 24px;
     font-size: 16px;
     line-height: 21px;
-
     span {
       text-decoration: none;
       color: grey;
     }
   }
   .pro-search-container {
+    position: relative;
     width: 970px;
     height: 230px;
     .pro-search-main {
@@ -49,6 +37,7 @@
         line-height: 21px;
         background-color: #f2f2f2;
         border-radius: 0.5rem;
+        outline: 0;
       }
       .pro-search-img {
         position: absolute;
@@ -67,6 +56,7 @@
         color: #737373;
         border: none;
         border-radius: 0.5rem;
+        outline: 0;
       }
       .pro-map-img {
         position: absolute;
@@ -85,6 +75,7 @@
         color: #737373;
         border: none;
         border-radius: 0.5rem;
+        outline: 0;
       }
       .pro-category-img {
         position: absolute;
@@ -119,6 +110,52 @@
         font-size: 14px;
         border: none;
         background-color: #ffffff;
+      }
+    }
+    .pro-search-modal {
+      position: absolute;
+      display: block;
+      width: 350px;
+      height: 469px;
+      top: 18%;
+      background-color: white;
+      border: 1px solid #f2f2f2;
+      border-radius: 7px;
+      z-index: 1;
+
+      &-not-active {
+        display: none;
+      }
+
+      p {
+        margin-top: 30px;
+        margin-left: 15px;
+        margin-bottom: 30px;
+        font-weight: 700;
+      }
+      &-style {
+        width: 98px;
+        height: 36px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #e1e1e1;
+        border-radius: 20px;
+        background-color: #ffffff;
+      }
+      .pro-search-cancel {
+        position: absolute;
+        display: block;
+        width: 350px;
+        height: 41px;
+        text-align: right;
+        padding-right: 10px;
+        bottom: 0%;
+        left: 0%;
+        font-size: 14px;
+        font-weight: 700;
+        outline: 0;
+        background-color: #ffffff;
+        border: 1px solid #e1e1e1;
       }
     }
   }

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import HireFormList from './HireFormList';
 import HireFormInput from './HireFormInput';
 import HireFormGender from './HireFormGender';
@@ -39,15 +38,20 @@ const HireUserRequest = ({ hireQnA }) => {
     if (operator === '-') {
       return nowQnA > 0 ? setNowQnA(nowQnA - 1) : 0;
     } else {
-      return nowQnA > 0 && nowQnA > hireQnA && hireQnA.length
-        ? hireQnA.length - 1
+      return nowQnA >= (hireQnA && hireQnA.length - 1)
+        ? hireQnA && hireQnA.length - 1
         : setNowQnA(nowQnA + 1);
     }
   };
 
+  console.log(nowQnA);
+
   return (
     <UserFormWrap>
-      <FormHeader gageWidth={`${changeGage(nowQnA)}%`}>
+      <FormHeader
+        gageWidth={`${changeGage(nowQnA)}%`}
+        persentActive={changeGage(nowQnA)}
+      >
         <div className='form-header-progress'>
           <div className='gage'></div>
         </div>
@@ -94,13 +98,20 @@ const HireUserRequest = ({ hireQnA }) => {
           <ButtonPre
             type='button'
             onClick={() => changeAnswerCount('-')}
-            style={nowQnA === 0 ? { display: 'none' } : {}}
+            isActive={nowQnA}
           >
             이전
           </ButtonPre>
-          <ButtonNext type='button' onClick={() => changeAnswerCount('+')}>
+          <ButtonNext
+            type='button'
+            onClick={() => changeAnswerCount('+')}
+            final={nowQnA}
+          >
             다음
           </ButtonNext>
+          <ButtonFinal type='button' final={nowQnA}>
+            제출하기
+          </ButtonFinal>
         </div>
       </FormFooter>
     </UserFormWrap>
@@ -138,6 +149,7 @@ const FormHeader = styled.header`
   }
 
   .form-header-persent {
+    display: ${(props) => (props.persentActive >= 70 ? 'block' : 'none')};
     line-height: 18px;
     padding: 8px 0px;
     font-size: 12px;
@@ -177,6 +189,7 @@ const FormFooter = styled.footer`
 `;
 
 const ButtonPre = styled.button`
+  display: ${(props) => (props.isActive === 0 ? 'none' : 'inline-block')};
   line-height: 1.5;
   padding: 11px 40px;
   background-color: var(--white);
@@ -196,7 +209,12 @@ const ButtonPre = styled.button`
 `;
 
 const ButtonNext = styled(ButtonPre)`
+  display: ${(props) => (props.final === 10 ? 'none' : 'inline-block')};
   background-color: var(--primary);
   color: var(--white);
   border-radius: 4px;
+`;
+
+const ButtonFinal = styled(ButtonNext)`
+  display: ${(props) => (props.final === 10 ? 'inline-block' : 'none')};
 `;

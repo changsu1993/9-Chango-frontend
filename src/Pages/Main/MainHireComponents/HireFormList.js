@@ -23,7 +23,6 @@ const HireFormList = ({ hireQnA, nowQnA }) => {
       : '';
   };
 
-  console.log(hireQnA && hireQnA[nowQnA].answers.is_direct_input);
   return (
     <UlHireFormList
       displayActive={hireQnA && hireQnA[nowQnA].answers.is_direct_input}

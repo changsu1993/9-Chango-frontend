@@ -27,7 +27,6 @@ const MainHire = () => {
     setHireData(res.data);
   }, []);
 
-  console.log(hireData);
   return (
     <Hire>
       <HireHeader backImg={hireData.service && hireData.service.image}>
@@ -63,7 +62,6 @@ const MainHire = () => {
           <HireUserRequest hireQnA={hireData && hireData.items} />
         </RequestForm>
         <RequestTip>
-          {/* 숨고는 어떤 곳인가요? 만 고정 */}
           <div className='tip-user'>
             <h4>숨고는 어떤 곳인가요?</h4>
             <p>
@@ -72,6 +70,18 @@ const MainHire = () => {
               <br /> 1분 내외의 요청서를 작성하면, 여러 고수님들이 맞춤형 견적을
               보내드려요.
               <br /> 맘에 쏙 드는 고수의 맞춤형 서비스를 받아보세요.
+            </p>
+          </div>
+          <div className='tip-user'>
+            <h4>미술 회화 레슨 고수만을 모았다!</h4>
+            <p>
+              미술을 한 번도 배워본 적 없어도 쉽고 재미있게 나만의 작품을 완성할
+              수 있어요. 다양한 미술 프로그램을 통해 각양각색의 취미 생활을
+              즐겨보세요.
+              <br />
+              선생님 프로필, 커리큘럼, 비용 비교하고 결정할 수 있어요.
+              <br />
+              요청서를 작성하시고, 지금 바로 미술 클래스를 만나보세요.
             </p>
           </div>
         </RequestTip>
@@ -91,9 +101,24 @@ const MainHire = () => {
             <span>업데이트 {reviewDate.toLocaleDateString()}</span>
           </div>
           {/* 백엔드 api로 맵 */}
-          <HireUserReview />
-          <HireUserReview />
-          <HireUserReview />
+          <HireUserReview
+            userName={'d**'}
+            review={
+              '처음 배우는 그림이라 긴장도 걱정도 많은 상태로 찾아갔는데, 너무 편하게 해주시고 친절하셔서 시간 가는 줄 모르고 재밌게 배우다 왔습니다 몇달 더 해보면서 취미로 배워보려구요! 완전 추천합니다!'
+            }
+          />
+          <HireUserReview
+            userName={'신**'}
+            review={
+              '유화는 처음이라 막막한 저에게 정말 도움이많이 되었습니다 기초부터 차근차근 설명해주시고 정말 친철했습니다 제 그림에 자신감도 많이붙었고 많으로도 꾸준히 그릴예정입니다 수업 정말 만족하고있고 정날 추천드리고싶은 수업입니다'
+            }
+          />
+          <HireUserReview
+            userName={'장**'}
+            review={
+              '기초부터 차근차근 가르쳐주셔서 좋았어요. 예술의 기원부터 투시, 인체의 구조를 자세히 가르쳐 주셔서 기초가 필요하신 분들에게 추천드려요!'
+            }
+          />
         </div>
       </HireReview>
       <HireLink>
@@ -209,7 +234,7 @@ const HireRequestForm = styled.section`
   flex-direction: row;
   max-width: 970px;
   margin: 0 auto;
-  padding: 40px 0;
+  padding-top: 40px;
   color: var(--dark);
 `;
 

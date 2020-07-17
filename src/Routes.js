@@ -6,6 +6,7 @@ import {
   Redirect,
 } from 'react-router-dom';
 import ScrollToTop from 'Components/ScrollToTop';
+import Nav from 'Components/Nav/Nav';
 import Main from 'Pages/Main/Main';
 import MainHire from 'Pages/Main/MainHire';
 import Login from 'Pages/Login/Login';
@@ -21,6 +22,7 @@ class Routes extends React.Component {
     return (
       <Router>
         <ScrollToTop>
+          <Nav />
           <Switch>
             <Route exact path='/main/:slug' component={Main} />
             <Route exact path='/hire' component={MainHire} />

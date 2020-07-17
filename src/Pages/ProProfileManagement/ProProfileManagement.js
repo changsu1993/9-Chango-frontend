@@ -1,11 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import Axios from 'axios';
+import ProfileNameChangerComponent from 'Components/ProfileNameChangerComponent/ProfileNameChangerComponent';
+import ProfileMainServiceComponent from 'Components/ProfileMainServiceComponent/ProfileMainServiceComponent';
+import ProfileInfoComponent from 'Components/ProfileInfoComponent/ProfileInfoComponent';
+import ProfileAddressComponent from 'Components/ProfileAddressComponent/ProfileAddressComponent';
+import ProfileMapComponent from 'Components/ProfileMapComponent/ProfileMapComponent';
+import ProfileActiveTimeComponent from 'Components/ProfileActiveTimeComponent/ProfileActiveTimeComponent';
+import ProfilePaymentTypeComponent from 'Components/ProfilePaymentTypeComponent/ProfilePaymentTypeComponent';
+import ProfileServicesProvidedComponent from 'Components/ProfileServicesProvidedComponent/ProfileServicesProvidedComponent';
+import ProfileServicesDetailComponent from 'Components/ProfileServicesDetailComponent/ProfileServicesDetailComponent';
+import ProfilePhotoComponent from 'Components/ProfilePhotoComponent/ProfilePhotoComponent';
+import ProfileLinkComponent from 'Components/ProfileLinkComponent/ProfileLinkComponent';
+import EmptyProfilePic from '../../Images/emptyprofilepic.svg';
+import ProfilePicUpload from '../../Images/profilepicuploadicon.svg';
 
 const ProProfileManagementPage = () => {
-  const [img, setImg] = useState('');
-  const [rating, setRating] = useState('');
   const [name, setName] = useState('');
+  const [picture, setPicture] = useState(null);
+  const [imgData, setImgData] = useState(EmptyProfilePic);
+  const onChangePicture = (e) => {
+    if (e.target.files[0]) {
+      //console.log('picture: ', e.target.files);
+      setPicture(e.target.files[0]);
+      const reader = new FileReader();
+      reader.addEventListener('load', () => {
+        setImgData(reader.result);
+      });
+      reader.readAsDataURL(e.target.files[0]);
+    }
+  };
 
   // useEffect =
   //   (() => {
@@ -21,24 +44,30 @@ const ProProfileManagementPage = () => {
 
   return (
     <>
-      {/* </navBar>
-      <userName>{name}</userName> */}
+      {/* <navBar/> */}
       <PpmContainer>
         <AllSection>
           <ProfileSection>
             <MyProfileBody>
-              {/* 프로필 상황 */}
+              {/* 프로필 정보 */}
               <ProfileOverview>
                 <ThumbContainer>
                   <Thumb>
                     <UserProfilePicture>
-                      <ClickIcon />
+                      <img src={imgData} className='empty-profile-image' />
+                      <ClickIcon>
+                        <img
+                          src={ProfilePicUpload}
+                          className='profile-pic-upload'
+                        />
+                      </ClickIcon>
                       <IconClickInput>
                         <CustomFileInput
                           type='file'
                           label='Upload'
-                          accept='.txt'
-                        />
+                          accept='image/jpg,image/jpeg,image, .png, .svg'
+                          onChange={onChangePicture}
+                        ></CustomFileInput>
                         <CustomFileLabel></CustomFileLabel>
                       </IconClickInput>
                     </UserProfilePicture>
@@ -64,7 +93,6 @@ const ProProfileManagementPage = () => {
                   <ProfileButton>미리 보기</ProfileButton>
                 </ProfileInfo>
               </ProfileOverview>
-
               <ProfileName>
                 <ProfileNameWrapper>
                   <div className='profile-name-update'>
@@ -88,37 +116,41 @@ const ProProfileManagementPage = () => {
                   </div>
                 </ProfileNameWrapper>
               </ProfileName>
-
-              {/*  <ProfileMainService></ProfileMainService>
-              
-                <ProfileIntroduction></ProfileIntroduction>
-               
-                <ProfileAddress></ProfileAddress>
-               
-                <ProfileMap></ProfileMap>
-              
-                <ProfileActiveTime></ProfileActiveTime>
-               
-                <ProfilePayment></ProfilePayment>
-                
-                <ProfileCareerHistory></ProfileCareerHistory>
-               
-                <ProfileServicesProvided></ProfileServicesProvided>
-                
-                <ProfileServicesDetail></ProfileServicesDetail>
-                
-                <ProfilePhotoVideo></ProfilePhotoVideo>
-                
-                <ProfileQandA></ProfileQandA>
-                
-                <ProfileLink></ProfileLink>
-                
-                <ProfileReviewRating></ProfileReviewRating> */}
+              <ProfileMainService>
+                <ProfileMainServiceComponent />
+              </ProfileMainService>
+              <ProfileIntroduction>
+                <ProfileInfoComponent />
+              </ProfileIntroduction>
+              <ProfileAddress>
+                <ProfileAddressComponent />
+              </ProfileAddress>
+              <ProfileMap>
+                <ProfileMapComponent />
+              </ProfileMap>
+              <ProfileActiveTime>
+                <ProfileActiveTimeComponent />
+              </ProfileActiveTime>
+              <ProfilePaymentType>
+                <ProfilePaymentTypeComponent />
+              </ProfilePaymentType>
+              <ProfileServicesProvided>
+                <ProfileServicesProvidedComponent />
+              </ProfileServicesProvided>
+              <ProfileServicesDetail>
+                <ProfileServicesDetailComponent />
+              </ProfileServicesDetail>
+              <ProfilePhoto>
+                <ProfilePhotoComponent />
+              </ProfilePhoto>
+              <ProfileLink>
+                <ProfileLinkComponent />
+              </ProfileLink>
             </MyProfileBody>
           </ProfileSection>
         </AllSection>
       </PpmContainer>
-      {/* </Footer> */}
+      <Footer/>
     </>
   );
 };
@@ -163,6 +195,9 @@ const UserProfilePicture = styled.div`
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid #f2f2f2;
+  .empty-profile-image {
+    width: 100%;
+  }
 `;
 const ClickIcon = styled.span`
   position: absolute;
@@ -170,8 +205,9 @@ const ClickIcon = styled.span`
   bottom: 0;
   width: 30px;
   height: 30px;
-  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBmaWxsPSIjMDBDN0FFIiBkPSJNMTkgMzBIMFYxMUMwIDQuOTI1IDQuOTI1IDAgMTEgMGgxOXYxOWMwIDYuMDc1LTQuOTI1IDExLTExIDExeiIvPjxwYXRoIGQ9Ik01IDI1aDIwVjVINXoiLz48cGF0aCBzdHJva2U9IiNGRkYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIiBkPSJNMTkuNDExIDEwLjc0TDE3LjU1NSA4aC01LjExbC0xLjg1NyAyLjc0SDdWMjBoMTZ2LTkuMjZ6Ii8+PHBhdGggc3Ryb2tlPSIjRkZGIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTE3LjUgMTQuNzVhMi4yNSAyLjI1IDAgMTEtNC41IDAgMi4yNSAyLjI1IDAgMDE0LjUgMHoiLz48L2c+PC9zdmc+)
-    no-repeat;
+  .profile-upload-icon {
+    width: 100%;
+  }
 `;
 const IconClickInput = styled.div`
   position: absolute;
@@ -186,16 +222,16 @@ const CustomFileInput = styled.input`
   z-index: 2;
   position: relative;
   width: 100%;
-  height: calc(1.5em + 1.375rem + 2px);
+  height: calc(48px);
 `;
 const CustomFileLabel = styled.label`
   left: 0;
   z-index: 1;
-  height: calc(1.5em + 1.375rem + 2px);
+  height: 48px;
   font-weight: 400;
   background-color: #fff;
   border: 1px solid #e1e1e1;
-  border-radius: 0.25rem;
+  border-radius: 4px;
 `;
 const ProfileInfo = styled.div`
   float: left;
@@ -257,74 +293,71 @@ const ProfileButton = styled.button`
   color: #fff;
   background-color: #00c7ae;
   border-color: #00c7ae;
+  border: 1px solid transparent;
+  &:hover {
+    background-color: #00a18d;
+    border-color: #009481;
+  }
 `;
 const ProfileName = styled.div`
   padding: 24px 0;
   border-bottom: 1px solid #f2f2f2;
   font-size: 0;
 `;
-const ProfileNameWrapper = styled.div`
+const ProfileMainService = styled.div`
   padding: 24px 0;
   border-bottom: 1px solid #f2f2f2;
   font-size: 0;
-
-  .profile-name-save {
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 16px;
-    .h2 {
-      float: left;
-      font-size: 18px;
-      font-weight: 700;
-      line-height: 1.44;
-      letter-spacing: -0.3px;
-      margin: 0;
-    }
-    .action-group {
-      cursor: pointer;
-      float: right;
-      font-size: 14px;
-      font-weight: 500;
-      line-height: 1.43;
-      letter-spacing: -0.2px;
-      text-align: right;
-      .update-save-button {
-        color: #00c7ae;
-      }
-    }
-  }
-  .info {
-    font-size: 1rem;
-    .value {
-      box-sizing: border-box;
-    }
-    .form-control-is-valid {
-      //display: none;
-      width: 100%;
-      border-radius: 4px;
-      padding: 12px;
-      height: auto;
-      font-size: 1rem;
-      font-weight: 400;
-      line-height: 1.5;
-      color: #323232;
-      background-color: #fff;
-      background-clip: padding-box;
-      border: 1px solid #e1e1e1;
-    }
-    small {
-      margin-top: 8px;
-      font-size: 14px;
-      color: #00c7ae;
-      font-weight: 500;
-    }
-    .invalid-feedback {
-      display: none;
-      width: 100%;
-      margin-top: 0.25rem;
-      font-size: 80%;
-      color: #ff3131;
-    }
-  }
 `;
+const ProfileIntroduction = styled.div`
+  padding: 24px 0;
+  border-bottom: 1px solid #f2f2f2;
+  font-size: 0;
+`;
+const ProfileAddress = styled.div`
+  padding: 24px 0;
+  border-bottom: 1px solid #f2f2f2;
+  font-size: 0;
+`;
+const ProfileMap = styled.div`
+  padding: 24px 0;
+  border-bottom: 1px solid #f2f2f2;
+  font-size: 0;
+`;
+const ProfileActiveTime = styled.div`
+  padding: 24px 0;
+  border-bottom: 1px solid #f2f2f2;
+  font-size: 0;
+`;
+const ProfilePaymentType = styled.div`
+  padding: 24px 0;
+  border-bottom: 1px solid #f2f2f2;
+  font-size: 0;
+`;
+const ProfileServicesProvided = styled.div`
+  padding: 24px 0;
+  border-bottom: 1px solid #f2f2f2;
+  font-size: 0;
+`;
+const ProfileServicesDetail = styled.div`
+  padding: 24px 0;
+  border-bottom: 1px solid #f2f2f2;
+  font-size: 0;
+`;
+const ProfilePhoto = styled.div`
+  padding: 24px 0;
+  border-bottom: 1px solid #f2f2f2;
+  font-size: 0;
+`;
+const ProfileLink = styled.div`
+  padding: 24px 0;
+  border-bottom: 1px solid #f2f2f2;
+  font-size: 0;
+`;
+const ProfileReviewRating = styled.div`
+  padding: 24px 0;
+  border-bottom: 1px solid #f2f2f2;
+  font-size: 0;
+`;
+
 // const  = styled.div`box-sizing: border-box;`;

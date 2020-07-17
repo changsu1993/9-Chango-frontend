@@ -13,57 +13,66 @@ export default class SignUp extends Component {
     };
   }
 
-  SignUpClickHandler = (e) => {
-    e.prevent.Default();
-    const { stateEmail, statePwd, stateName } = this.state;
-    if (!stateEmail || !statePwd || !stateName) {
-      alert('모든 항목을 작성해주세요');
-    } else {
-      fetch(`${Backend_IP}/user/signup`, {
-        method: 'POST',
-        body: JSON.stringify({
-          email: stateEmail,
-          password: statePwd,
-          name: stateName,
-        }),
-      })
-        .then((res) => res.json())
-        .then((res) => {
-          if (res.message === 'SUCCESS') {
-            this.props.history.push('/login');
-          }
-        });
-    }
+
+  clickHandler = (e) => {
+    //e.prevent.Default();
+    const { email, pwd, name } = this.state;
+    // if (!email || !pwd || !name) {
+    //   alert('모든 항목을 작성해주세요');
+    // } else {
+    fetch('http://10.58.7.124:8000/sign-up', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: email,
+        password: pwd,
+        name: name,
+      }),
+    })
+      // .then((res) => res.json())
+      .then((res) => {
+        this.props.history.push('/login');
+      });
+    // }
+
   };
 
   idPwEmailHandler = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
     });
-    const checkEmail = function (str) {
-      const reg_email = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-      return reg_email.test(str) ? false : true;
-    };
-    if (!checkEmail(this.state.email)) {
-      this.setState({
-        email: '',
-      });
-    }
+
+    console.log('id', this.state.email, 'pwd', this.state.pwd, 'name', this.state.name);
+
+
   };
 
   //패스워드 유효성 검사
-  checkPwdHandler = (e) => {
-    const checkPwd = function (str) {
-      const reg_pwd = /(?=.*\d{1,50})(?=.*[~  `!@#$%\^&*()-+=]{1,50})(?=.*[a-zA-Z]{2,50}).{8,50}$/;
-      return reg_pwd.test(str) ? true : false;
-    };
-    if (!checkPwd(this.state.pwd)) {
-      this.setState({
-        pwd: '',
-      });
-    }
-  };
+  // checkPwdHandler = (e) => {
+  //   const checkPwd = function (str) {
+  //     const reg_pwd = /(?=.*\d{1,50})(?=.*[~  `!@#$%\^&*()-+=]{1,50})(?=.*[a-zA-Z]{2,50}).{8,50}$/;
+  //     return reg_pwd.test(str) ? true : false;
+  //   };
+  //   if (checkPwd(this.state.pwd) === false) {
+  //     this.setState({
+  //       pwd: '',
+  //     });
+  //   }
+  // };
 
+
+  //아이디 유효성 검사
+  // checkEmailHandler = (e) => {
+  //   //아이디 유효성검사(영문,숫자 혼합 6~20)
+  //   const checkEmail = function (str) {
+  //     const reg_email = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+  //     return reg_email.test(str) ? false : true;
+  //   };
+  //   if (checkEmail(this.state.email)===false) {
+  //     this.setState({
+  //       email: '',
+  //     });
+  //   }
+  // };
   render() {
     return (
       <div className='signUp'>
@@ -91,6 +100,7 @@ export default class SignUp extends Component {
                       </div>
                     </fieldset>
                   </div>
+
                   <div className='signup-email-wrapper'>
                     <fieldset className='signup-email-input-box'>
                       <legend className='signup-email-label'> 이메일 </legend>
@@ -109,6 +119,7 @@ export default class SignUp extends Component {
                       </div>
                     </fieldset>
                   </div>
+
                   <div className='signup-password-wrapper'>
                     <fieldset className='signup-password-input-box'>
                       <legend className='signup-password-label'>
@@ -123,7 +134,7 @@ export default class SignUp extends Component {
                           placeholder='영문자와 숫자를 포함하여 8자 이상'
                           onChange={(e) => {
                             this.idPwEmailHandler(e);
-                            this.checkPwdHandler();
+                            //this.checkPwdHandler();
                           }}
                         />
                         <div className='password-invalid-feedback'>
@@ -133,20 +144,16 @@ export default class SignUp extends Component {
                       </div>
                     </fieldset>
                   </div>
-                  <div
-                    className='signup-term-checkbox-form'
-                    onClick={this.SignUpClickHandler}
-                  >
-                    숨고의&nbsp;
-                    <Link className='term-usage-link'>이용약관&nbsp;</Link>
-                    및&nbsp;
-                    <Link className='term-privacy-link'>
-                      개인정보취급방침&nbsp;
-                    </Link>
-                    에 동의합니다
+
+                  <div className='signup-term-checkbox-form'>
+                    숨고의&nbsp;<Link className='term-usage-link'>이용약관&nbsp;</Link>및&nbsp;
+                    <Link className='term-privacy-link'>개인정보취급방침&nbsp;</Link>에 동의합니다
+
                   </div>
                   <div className='signup-btn-wrapper'>
-                    <button className='signup-btn-primary'>회원가입</button>
+                    <button className='signup-btn-primary' onClick={this.clickHandler}>
+                      회원가입
+                    </button>
                   </div>
 
                   <div className='signup-with-kakao'>

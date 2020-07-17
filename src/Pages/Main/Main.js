@@ -3,6 +3,8 @@ import MainNavInfo from './MainComponents/mainNavInfo';
 import MainNavCategoryLi from './MainComponents/MainNavCategoryLi';
 import MainPopularCard from './MainComponents/MainPopularCard';
 import MainWholeCategoryLi from './MainComponents/MainWholeCategoryLi';
+import { faSearch } from '@fortawesome/fontawesome-free-solid';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Main.scss';
 
 export default class Main extends Component {
@@ -35,10 +37,6 @@ export default class Main extends Component {
   };
 
   render() {
-    // 확인용 console , api 호출시 다시 확인
-    // console.log("url data >>>", this.props.match.params.slug);
-    // console.log("currentCate >>>", this.state.currentCate);
-    // console.log("fetch data >>>", this.state.category);
     const { category } = this.state;
     return (
       <main className='Main'>
@@ -61,8 +59,8 @@ export default class Main extends Component {
                 autoComplete='off'
                 className='input-main'
               />
-              <button type='submit' className='btn-main'>
-                고수찾기
+              <button type='button' className='btn-main'>
+                <FontAwesomeIcon icon={faSearch} /> 고수찾기
               </button>
             </div>
           </div>
@@ -74,6 +72,7 @@ export default class Main extends Component {
               <MainNavCategoryLi
                 navData={navData}
                 handleCurrentCate={this.handleCurrentCate}
+                key={navData.id}
               />
             ))}
           </ul>
@@ -85,7 +84,7 @@ export default class Main extends Component {
             {/* component 링크태그 path hire 페이지로 추후 수정 */}
             {category[0] &&
               category[0].popular_service.map((pService) => (
-                <MainPopularCard pService={pService} />
+                <MainPopularCard pService={pService} key={pService.pop_title} />
               ))}
           </div>
         </section>
@@ -96,7 +95,10 @@ export default class Main extends Component {
             {/* component 링크태그 path hire 페이지로 추후 수정 */}
             {category[0] &&
               category[0].whole_service.map((wService) => (
-                <MainWholeCategoryLi wService={wService} />
+                <MainWholeCategoryLi
+                  wService={wService}
+                  key={wService.list_head}
+                />
               ))}
           </ul>
         </section>

@@ -11,7 +11,7 @@ export default class Login extends Component {
     super();
     this.state = {
       loginId: '',
-      loginPw: '',
+      loginPwd: '',
       errorId: false,
       errorPwd: false,
     };
@@ -25,33 +25,32 @@ export default class Login extends Component {
   };
 
   changeHandler = () => {
-    const { loginId, loginPw } = this.state;
-    loginId.length >= 0 && loginPw.length >= 0
+    const { loginId, loginPwd } = this.state;
+    loginId.length >= 0 && loginPwd.length >= 0
       ? this.setState({ errorId: false, errorPwd: false })
       : this.setState({ errorId: true, errorPwd: true });
   };
 
   //일반 로그인 클릭 핸들러
   loginClickHandler = (e) => {
-    const { emailState, pwdState, loginId, loginPwd } = this.state;
-    if (
-      loginId.length >= 5 &&
-      loginPwd.length >= 5 &&
-      loginId.includes('@' && '.')
-    ) {
-      fetch(`${Backend_IP}/account/login`, {
+
+    //e.preventDefault();
+    const { loginId, loginPwd } = this.state;
+    if (this.state.loginId.length >= 5 && this.state.loginPwd.length >= 5 && this.state.loginId.includes('@' && '.')) {
+      fetch('http://10.58.7.124:8000/sign-in', {
+
         method: 'POST',
         body: JSON.stringify({
-          email: emailState,
-          password: pwdState,
+          email: loginId,
+          password: loginPwd,
         }),
       })
         .then((res) => res.json())
         .then((res) => {
           localStorage.setItem('access_token', res.access_token);
           this.props.history.push('/');
+          this.setState({ errorId: false, errorPwd: false });
         });
-      alert('로그인 성공!');
     } else {
       this.setState({ errorId: true, errorPwd: true });
     }
@@ -61,7 +60,7 @@ export default class Login extends Component {
   responseKakao = (response) => {
     window.Kakao.Auth.login({
       success: (response) => {
-        fetch(`${API_IP}/users/kakao-login`, {
+        fetch(`${API_IP}/kakao`, {
           method: 'POST',
           headers: {
             Authorization: response.access_token,
@@ -70,7 +69,7 @@ export default class Login extends Component {
           .then((response) => response.json())
           .then((response) => {
             localStorage.setItem('login_token', response.access_token);
-            this.props.history.push('/signup');
+            this.props.history.push('/');
           });
       },
     });
@@ -83,7 +82,7 @@ export default class Login extends Component {
           <div className='login-page'>
             <h2 className='welcome-message'>숨고에 오신 것을 환영합니다</h2>
             <div className='login-card'>
-              <form className='login-form'>
+              <div className='login-form'>
                 <div className='login-form-row'>
                   <div className='email-section-wrapper'>
                     <div className='email-input-box'>
@@ -115,7 +114,7 @@ export default class Login extends Component {
                       <div className='password-input-wrapper'>
                         <input
                           className='password-input-box'
-                          name='loginPw'
+                          name='loginPwd'
                           onChange={(e) => {
                             this.idPwHandler(e);
                             this.changeHandler();
@@ -162,7 +161,7 @@ export default class Login extends Component {
                     />
                   </div>
                 </div>
-              </form>
+              </div>
             </div>
             <div className='signup-link'>
               <Link to='/signup' className='no-account-link'>

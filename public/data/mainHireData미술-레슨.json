@@ -468,23 +468,6 @@
       "question": "레슨 관련 문의 및 희망 사항을 알려주세요!",
       "answers": null,
       "id": 59891
-    },
-    {
-      "order": 11,
-      "placeholder": "",
-      "type": {
-        "title": "매칭 서비스방법: 고수이동(2km내, 비노출)",
-        "has_sub": false,
-        "id": 108,
-        "group": {
-          "title": "매칭 서비스위치",
-          "is_required": true
-        }
-      },
-      "required": false,
-      "question": "비노출",
-      "answers": null,
-      "id": 59892
     }
   ],
   "service": {

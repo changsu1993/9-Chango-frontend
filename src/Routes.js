@@ -15,6 +15,7 @@ import ProProfileManagement from 'Pages/ProProfileManagement/ProProfileManagemen
 import ProDetail from 'Pages/Pro/ProDetail';
 import ProProfile from 'Pages/Pro/ProProfile';
 import Local from './Components/Local/Local';
+import Footer from 'Components/Footer/Footer';
 
 class Routes extends React.Component {
   render() {
@@ -35,6 +36,7 @@ class Routes extends React.Component {
             <Route exact path='/prodetail/:proId' component={ProDetail} />
             <Route exact path='/proprofile' component={ProProfile} />
             <Route exact path='/local' component={Local} />
+            <Route exact path='/footer' component={Footer} />
             <Redirect from='*' to='/main/레슨' />
           </Switch>
         </ScrollToTop>

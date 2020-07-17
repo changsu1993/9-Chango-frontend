@@ -8,10 +8,6 @@ import HireProcessContent from './MainHireComponents/HireProcessContent';
 import HireUserReview from './MainHireComponents/HireUserReview';
 import styled from 'styled-components';
 
-// mock data로 추후 대체, 이미지, 별점 모두다
-const backImg =
-  'https://dmmj3ljielax6.cloudfront.net/upload/service-bg/service_428.jpg';
-
 // 랜덤숫자 필요
 const starPointRandom = (Math.random() * 0.7 + 4.3).toFixed(1);
 const gosuRandom = Math.floor(Math.random() * 3000 + 6000).toLocaleString();
@@ -21,12 +17,25 @@ const reviewRandom = Math.floor(Math.random() * 50 + 250);
 const reviewDate = new Date();
 
 const MainHire = () => {
+  const [hireData, setHireData] = useState({});
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(async () => {
+    const res = await axios(
+      'http://localhost:3000/data/mainHireData미술-레슨.json'
+    );
+    setHireData(res.data);
+  }, []);
+
+  console.log(hireData);
   return (
     <Hire>
-      <HireHeader backImg={backImg}>
+      <HireHeader backImg={hireData.service && hireData.service.image}>
         <HireHeaderContents>
           <div className='header-title'>
-            <h1 className='header-title-h1'>미술 회화 레슨</h1>
+            <h1 className='header-title-h1'>
+              {hireData.service && hireData.service.title}
+            </h1>
             <div className='header-title-review-wrap'>
               <StarPoint pointNum={starPointRandom} />
               <span>{starPointRandom}</span>
@@ -51,7 +60,7 @@ const MainHire = () => {
       </HireHeader>
       <HireRequestForm>
         <RequestForm>
-          <HireUserRequest />
+          <HireUserRequest hireQnA={hireData && hireData.items} />
         </RequestForm>
         <RequestTip>
           {/* 숨고는 어떤 곳인가요? 만 고정 */}

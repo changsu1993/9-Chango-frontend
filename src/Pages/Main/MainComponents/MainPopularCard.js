@@ -11,10 +11,10 @@ export default class MainPopularCard extends Component {
             <div
               className='popular-card-img'
               style={{
-                backgroundImage: `url(${pService.pop_img})`,
+                backgroundImage: `url(${pService.image_url})`,
               }}
             ></div>
-            <h4 className='popular-card-title'>{pService.pop_title}</h4>
+            <h4 className='popular-card-title'>{pService.detail_category}</h4>
           </div>
         </Link>
       </div>

@@ -6,9 +6,9 @@ export default class MainWholeCategoryLi extends Component {
     const { wService } = this.props;
     return (
       <li className='whole-category-li'>
-        <h3>{wService.list_head}</h3>
+        <h3>{wService.sub_category}</h3>
         <ul>
-          {wService.list_el.map((elData) => {
+          {wService.detail_category.map((elData) => {
             return (
               <li key={elData}>
                 <Link

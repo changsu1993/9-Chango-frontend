@@ -2,18 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import StarPoint from './StarPoint';
 
-const HireUserReview = (props) => {
+const HireUserReview = ({ userName, review }) => {
+  const starPointRandom = (Math.random() * 0.9 + 4.1).toFixed(1);
+
   return (
     <UserReviewWrap>
       <div className='review-info'>
-        <h5>김**</h5>
-        <StarPoint pointNum={4.7} />
+        <h5>{userName}</h5>
+        <StarPoint pointNum={starPointRandom} />
       </div>
-      <p className='review-txt'>
-        즐겁게 수업받았습니다~! 준비도 잘해와주시고 재미있고 친절하게 잘
-        알려주셔서 유익한 시간 보냈네요~ 웃으면서 재미있게 미술도 하고 완성된
-        작품보며 뿌듯함을 느낍니다 ㅎ
-      </p>
+      <p className='review-txt'>{review}</p>
     </UserReviewWrap>
   );
 };

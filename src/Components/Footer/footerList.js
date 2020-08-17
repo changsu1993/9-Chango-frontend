@@ -7,7 +7,7 @@ const footerList = {
     {
       parentsList: '고객안내',
       childList: [
-        '이용안내',
+        '이용안내',
         '안전정책',
         '예상금액',
         '고수찾기',

@@ -13,14 +13,13 @@ export default class SignUp extends Component {
     };
   }
 
-
   clickHandler = (e) => {
     //e.prevent.Default();
     const { email, pwd, name } = this.state;
     // if (!email || !pwd || !name) {
     //   alert('모든 항목을 작성해주세요');
     // } else {
-    fetch('http://10.58.7.124:8000/sign-up', {
+    fetch('http://10.58.2.181:8000/account/sign-up', {
       method: 'POST',
       body: JSON.stringify({
         email: email,
@@ -33,7 +32,6 @@ export default class SignUp extends Component {
         this.props.history.push('/login');
       });
     // }
-
   };
 
   idPwEmailHandler = (e) => {
@@ -41,9 +39,14 @@ export default class SignUp extends Component {
       [e.target.name]: e.target.value,
     });
 
-    console.log('id', this.state.email, 'pwd', this.state.pwd, 'name', this.state.name);
-
-
+    console.log(
+      'id',
+      this.state.email,
+      'pwd',
+      this.state.pwd,
+      'name',
+      this.state.name
+    );
   };
 
   //패스워드 유효성 검사
@@ -58,7 +61,6 @@ export default class SignUp extends Component {
   //     });
   //   }
   // };
-
 
   //아이디 유효성 검사
   // checkEmailHandler = (e) => {
@@ -146,12 +148,19 @@ export default class SignUp extends Component {
                   </div>
 
                   <div className='signup-term-checkbox-form'>
-                    숨고의&nbsp;<Link className='term-usage-link'>이용약관&nbsp;</Link>및&nbsp;
-                    <Link className='term-privacy-link'>개인정보취급방침&nbsp;</Link>에 동의합니다
-
+                    숨고의&nbsp;
+                    <Link className='term-usage-link'>이용약관&nbsp;</Link>
+                    및&nbsp;
+                    <Link className='term-privacy-link'>
+                      개인정보취급방침&nbsp;
+                    </Link>
+                    에 동의합니다
                   </div>
                   <div className='signup-btn-wrapper'>
-                    <button className='signup-btn-primary' onClick={this.clickHandler}>
+                    <button
+                      className='signup-btn-primary'
+                      onClick={this.clickHandler}
+                    >
                       회원가입
                     </button>
                   </div>

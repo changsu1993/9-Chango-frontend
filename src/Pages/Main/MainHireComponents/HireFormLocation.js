@@ -11,7 +11,25 @@ const HireFormLocation = ({ hireQnA, nowQnA }) => {
           <option disabled='disabled' selected='selected'>
             시/도
           </option>
-          {['서울', '경기', '인천'].map((si) => (
+          {[
+            '서울',
+            '세종',
+            '강원',
+            '인천',
+            '경기',
+            '충북',
+            '충남',
+            '경북',
+            '대전',
+            '대구',
+            '전북',
+            '경남',
+            '울산',
+            '광주',
+            '부산',
+            '전남',
+            '제주',
+          ].map((si) => (
             <option value={si}>{si}</option>
           ))}
         </select>
@@ -26,7 +44,33 @@ const HireFormLocation = ({ hireQnA, nowQnA }) => {
           <option disabled='disabled' selected='selected'>
             시/군/구
           </option>
-          {['마포구', '서대문구', '중구'].map((gu) => (
+          {[
+            '강남구',
+            '강동구',
+            '강북구',
+            '강서구',
+            '관악구',
+            '광진구',
+            '구로구',
+            '금천구',
+            '노원구',
+            '도봉구',
+            '동대문구',
+            '동작구',
+            '마포구',
+            '서대문구',
+            '서초구',
+            '성동구',
+            '성북구',
+            '송파구',
+            '양천구',
+            '영등포구',
+            '용산구',
+            '은평구',
+            '종로구',
+            '중구',
+            '중랑구',
+          ].map((gu) => (
             <option value={gu}>{gu}</option>
           ))}
         </select>
@@ -41,7 +85,39 @@ const HireFormLocation = ({ hireQnA, nowQnA }) => {
           <option disabled='disabled' selected='selected'>
             읍/면/동
           </option>
-          {['망원동', '홍은동', '삼청동'].map((dong) => (
+          {[
+            '개포1동',
+            '개포2동',
+            '개포4동',
+            '개포동',
+            '논현1동',
+            '논현2동',
+            '논현동',
+            '대치1동',
+            '대치2동',
+            '대치4동',
+            '대치동',
+            '도곡1동',
+            '도곡2동',
+            '도곡동',
+            '삼성1동',
+            '삼성2동',
+            '삼성동',
+            '세곡동',
+            '수서동',
+            '신사동',
+            '압구정동',
+            '역삼1동',
+            '역삼2동',
+            '역삼동',
+            '율현동',
+            '일원1동',
+            '일원2동',
+            '일원동',
+            '일원본동',
+            '자곡동',
+            '청담동',
+          ].map((dong) => (
             <option value={dong}>{dong}</option>
           ))}
         </select>

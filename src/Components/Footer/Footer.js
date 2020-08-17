@@ -62,7 +62,7 @@ const FooterTop = styled.div`
   justify-content: space-around;
   margin-bottom: 40px;
   padding-top: 30px;
-  border-top: 1px solid #737373;
+  border-top: 1px solid #e7e7e7;
   .number {
     margin-bottom: 10px;
     font-size: 20px;

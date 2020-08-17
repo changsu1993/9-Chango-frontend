@@ -33,12 +33,14 @@ export default class Login extends Component {
 
   //일반 로그인 클릭 핸들러
   loginClickHandler = (e) => {
-
     //e.preventDefault();
     const { loginId, loginPwd } = this.state;
-    if (this.state.loginId.length >= 5 && this.state.loginPwd.length >= 5 && this.state.loginId.includes('@' && '.')) {
-      fetch('http://10.58.7.124:8000/sign-in', {
-
+    if (
+      this.state.loginId.length >= 5 &&
+      this.state.loginPwd.length >= 5 &&
+      this.state.loginId.includes('@' && '.')
+    ) {
+      fetch('http://10.58.2.181:8000/account/sign-in', {
         method: 'POST',
         body: JSON.stringify({
           email: loginId,
@@ -60,7 +62,7 @@ export default class Login extends Component {
   responseKakao = (response) => {
     window.Kakao.Auth.login({
       success: (response) => {
-        fetch(`${API_IP}/kakao`, {
+        fetch(`${API_IP}/account/kakao`, {
           method: 'POST',
           headers: {
             Authorization: response.access_token,

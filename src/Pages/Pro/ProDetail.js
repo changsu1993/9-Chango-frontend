@@ -17,7 +17,7 @@ class ProDetail extends Component {
 
   componentDidMount() {
     fetch(
-      `http://10.58.2.73:8000/account/proinfo/${this.props.match.params.proId}`
+      `http://10.58.2.181:8000/account/proinfo/${this.props.match.params.proId}`
     )
       .then((res) => res.json())
       .then((res) =>
@@ -112,13 +112,12 @@ class ProDetail extends Component {
               <p className='prodetail-fifth-contents'>{proData.description}</p>
               <div className='prodetail-unfold'>
                 <span className='prodetail-unfold-view'>더보기</span>
-                <span className='prodetail-unfold-folding'>접기</span>
+                {/* <span className='prodetail-unfold-folding'>접기</span> */}
               </div>
             </div>
             <div className='prodetail-picture'>
               <p className='prodetail-picture-title'>사진 및 동영상</p>
               <div className='prodetail-picture-box'>
-                <img className='prodetail-picture-img' src='' alt='사진' />
                 {proData.sub_img &&
                   proData.sub_img.map((reviewImg) => (
                     <img src={reviewImg} alt='사진' />

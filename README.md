@@ -1,68 +1,75 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## `프로젝트 소개`
 
-## Available Scripts
+내 주변 숨은 고수 찾기 서비스 플랫폼인 [Soomgo](https://soomgo.com/) 클론 프로젝트
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## `개발 인원 및 기간`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- 기간 : 20.07.06 ~ 20.07.17
+- 팀 구성 : 프론트 3명 (홍정민, 진선경, 박창수), 벡엔드 3명 (이종헌, 김대휘, 박상영)
+- Github
+  - [프론트 Repo](https://github.com/wecode-bootcamp-korea/9-Chango-frontend.git)
+  - [백엔드 Repo](https://github.com/wecode-bootcamp-korea/9-Chango-backend.git)
+- 개발 담당
+  - 홍정민 : 로그인 / 회원가입 / 고수 상세 프로필 페이지
+  - 진선경 : Main 카테고리 / 일반 회원 고수 매칭 설문 페이지 , Nav
+  - 박창수 : 고수 찾기 페이지 , 고수 디테일 페이지, Footer
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+## `사용 기술`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- JavaScript(ES6)
+- React.js(Class형 컴포넌트, 함수형 컴포넌트(hook))
+- SCSS / styled-component
+- KaKao Map API / Kakao Login API
+- Git, Github
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## `구현 기능`
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### 로그인/회원가입 페이지
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- 정규식을 사용한 이메일 형식 확인
+- 이메일 및 패스워드 양식 확인 기능(이메일 및 아이디 중복 확인)
+- 카카오 소셜 로그인으로 토큰 받아오기 가능.
+- 백엔드 api통신으로 받아온 JWT 토큰을 localStorage에 저장 가능
 
-### `npm run eject`
+### 고수 상세 프로필 페이지
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- react 함수형 컴포넌트로 state 관리, styled component 사용
+- local 컴퓨터에서 웹사이트에 프로필 이미지 업로드 가능
+- 고수 상세 정보 입력 후 저장 가능
+- daum.postcode api로 우편번호 검색 후 주소 저장 가능
+- kakao 지도 api를 이용하여 고수 활동 반경 변경 가능 (geocoder, circle 사용)
+- useEffect Hooks로 카카오맵 기본 설정 세팅
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Main 카테고리 페이지
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Query parameters 이용한 카테고리 별 페이지 네이션 구현
+- 카테고리별 인기 서비스, 전체 서비스 map 함수 사용하여 return
+- react class형 컴포넌트 state 관리, fetch로 백엔드 api 통신
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### 일반 유저 설문 페이지
 
-## Learn More
+- 점수에 따른 별점 표시 함수 구현
+- switch case문을 통한 각 질문별 설문 Form 구현
+- datepicker 사용해 달력 편집
+- react hook / styled-component 사용 , axios를 사용해 백엔드 api 통신
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Footer / 고수 찾기 / 고수 디테일 페이지
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Class형 컴포넌트와 SASS를 이용해 고수 찾기 페이지, 고수 디테일 페이지 구현
+- 함수형 컴포넌트와 styled-component를 이용해 Footer 구현
+- 고수 찾기 페이지 modal 창 구현
+- Back-End와 서버 통신/호출하여 map함수를 이용해 고수 찾기 페이지 및 디테일 페이지 구현
+- 시간상 Back-End 쪽에서 주지 못한 데이터 Mock data로 만들어 구현
+- Back-End 서버와 비동기 요청하는 방식인 fetch함수 사용
 
-### Code Splitting
+---
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## `Demo`
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[![Video Label](https://user-images.githubusercontent.com/58774316/88511721-4bf37a00-d020-11ea-969d-13958a89f874.png)](https://www.youtube.com/watch?v=tj2Ymo_sS9Q)

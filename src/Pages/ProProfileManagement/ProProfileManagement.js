@@ -94,27 +94,7 @@ const ProProfileManagementPage = () => {
                 </ProfileInfo>
               </ProfileOverview>
               <ProfileName>
-                <ProfileNameWrapper>
-                  <div className='profile-name-update'>
-                    <h2>이름</h2>
-                    <div className='action-group'>
-                      <div className='update-save-button'>저장</div>
-                    </div>
-                  </div>
-                  <div className='info'>
-                    <div className='value' display='block'>
-                      홍정민
-                    </div>
-                    <input
-                      type='text'
-                      placeholder='이름 또는 업체명을 입력해 주세요'
-                      className='form-control-is-valid'
-                      display='none'
-                    ></input>
-                    <small display='none'></small>
-                    <div className='invalid-feedback'></div>
-                  </div>
-                </ProfileNameWrapper>
+                <ProfileNameChangerComponent />
               </ProfileName>
               <ProfileMainService>
                 <ProfileMainServiceComponent />
@@ -150,7 +130,6 @@ const ProProfileManagementPage = () => {
           </ProfileSection>
         </AllSection>
       </PpmContainer>
-      <Footer/>
     </>
   );
 };

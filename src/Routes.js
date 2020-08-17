@@ -38,9 +38,9 @@ class Routes extends React.Component {
             <Route exact path='/prodetail/:proId' component={ProDetail} />
             <Route exact path='/proprofile' component={ProProfile} />
             <Route exact path='/local' component={Local} />
-            <Route exact path='/footer' component={Footer} />
             <Redirect from='*' to='/main/레슨' />
           </Switch>
+          <Footer />
         </ScrollToTop>
       </Router>
     );

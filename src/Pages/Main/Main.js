@@ -15,7 +15,7 @@ export default class Main extends Component {
 
   handleMainData = () => {
     fetch(
-      `http://10.58.3.92:8000/category?category=${this.state.currentCate}`
+      `http://10.58.2.181:8000/category?category=${this.state.currentCate}`
       // `http://localhost:3000/data/mainCategories${this.state.currentCate}.json`
     )
       .then((res) => res.json())

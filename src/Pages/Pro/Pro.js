@@ -22,7 +22,7 @@ class Pro extends Component {
   }
 
   componentDidMount() {
-    fetch('http://10.58.2.73:8000/account/prolist')
+    fetch('http://10.58.2.181:8000/account/prolist')
       .then((res) => res.json())
       .then((res) =>
         this.setState({
